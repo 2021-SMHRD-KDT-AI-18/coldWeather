@@ -11,7 +11,7 @@ public class pdg {
 
 		for (int i = 0; i < num; i++) {
 			int goo = ran.nextInt(45) + 1;
-			System.out.println(goo);
+			System.out.print(goo + "\t");
 
 		}
 
