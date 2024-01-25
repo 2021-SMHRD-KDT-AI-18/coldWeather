@@ -11,5 +11,10 @@ public class Ex01 {
 		
 		String a = "점심뭐먹어요";
 		System.out.println(a);
+		
+		
+		
+		
+		
 	}
 }
