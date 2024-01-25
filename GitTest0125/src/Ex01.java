@@ -9,8 +9,6 @@ public class Ex01 {
 		System.out.println("점심 뭐먹어요");
 		System.out.println("전 편의점,,");
 		
-		String a = "점심뭐먹어요";
-		System.out.println(a);
 		
 		
 		
