@@ -10,6 +10,15 @@ public class Ex01 {
 		System.out.println("전 편의점,,");
 		System.out.println("커밋만 하고 푸시 안하기1");
 		System.out.println("커밋만 하고 푸시 안하기2");
-
+		
+		
+		
+	   
+		
+		
+		
+		
+		
+		
 	}
 }
