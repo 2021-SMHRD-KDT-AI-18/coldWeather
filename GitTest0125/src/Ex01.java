@@ -7,6 +7,7 @@ public class Ex01 {
 		System.out.println("팀원 2222222222 커밋!");
 		System.out.println("팀원 3 커~밋");
 		System.out.println("점심 뭐먹어요");
-
+		System.out.println("전 편의점,,");
+		
 	}
 }
