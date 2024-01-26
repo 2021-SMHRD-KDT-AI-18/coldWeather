@@ -26,7 +26,7 @@ public class CharacterDTO {
 		}
 
 		// getter 메소드
-
+		
 		public int getName() {
 			return name;
 		}
