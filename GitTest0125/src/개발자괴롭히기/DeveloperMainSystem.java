@@ -188,8 +188,9 @@ public class DeveloperMainSystem {
 			int magicPower = sc.nextInt();
 			System.out.print("정신력 : ");
 			int mentality = sc.nextInt();
+			int salary =0;
 
-			cdto = new CharacterDTO(name, health, intelligence, faithPower, magicPower, mentality);
+			cdto = new CharacterDTO(name, health, intelligence, faithPower, magicPower, mentality, salary);
 			// CharacterDTO 만들어지면 컨트롤러에 입력해서 받아오면 됨
 			int cnt = controller.inputStats(cdto);
 

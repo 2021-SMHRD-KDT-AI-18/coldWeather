@@ -11,7 +11,7 @@ public class CharacterDTO {
    private int ment;
    private int salary;
 
-   public CharacterDTO(String name, int hp, int intell, int fp, int mp, int ment) {
+   public CharacterDTO(String name, int hp, int intell, int fp, int mp, int ment, int salary) {
       super();
       this.name = name;
       this.hp = hp;
@@ -19,7 +19,7 @@ public class CharacterDTO {
       this.fp = fp;
       this.mp = mp;
       this.ment = ment;
-      this.salary = 0;
+      this.salary = salary;
    }
 
 //      name 메소드

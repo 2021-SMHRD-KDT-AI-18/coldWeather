@@ -24,11 +24,12 @@ public class CharacterDAO {
 		int fp = cdto.getFp();
 		int mp = cdto.getMp();
 		int ment = cdto.getMent();
+		int salary = cdto.getSalary();
 		int cnt = 0;
 
 		connection();
 		try {
-			String sql = "INSERT INTO character VALUES (?,?,?,?,?,?)";
+			String sql = "INSERT INTO character VALUES (?,?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, name);
 			psmt.setInt(2, hp);
@@ -36,6 +37,7 @@ public class CharacterDAO {
 			psmt.setInt(4, fp);
 			psmt.setInt(5, mp);
 			psmt.setInt(6, ment);
+			psmt.setInt(7, salary);
 			cnt = psmt.executeUpdate();
 
 		} catch (Exception e) {
