@@ -188,7 +188,7 @@ public class DeveloperMainSystem {
 			int magicPower = sc.nextInt();
 			System.out.print("정신력 : ");
 			int mentality = sc.nextInt();
-			int salary =0;
+			int salary = 0;
 
 			cdto = new CharacterDTO(name, health, intelligence, faithPower, magicPower, mentality, salary);
 			// CharacterDTO 만들어지면 컨트롤러에 입력해서 받아오면 됨
@@ -202,32 +202,50 @@ public class DeveloperMainSystem {
 			}
 
 		}
-
-		// 배틀 시스템
-
+		
+// 		배틀 시스템
+//		enemy e1 = new enemy("pbkMK1", 50, 50, 50, 50, 50);
+//		enemy e2 = new enemy("pbkMK2", 60, 60, 60, 60, 60);
+//		enemy e3 = new enemy("pbkMK3", 70, 70, 70, 70, 70);
 //		System.out.println("대결을 시작합니다");
+
+		//		String enemy;
+//		int stage = 1;
 //		while(true) {
+//		if(stage == 1) {
+//
+//		}else if (stage==2) {
 //			
+//		}else if (stage==3) {
+//			
+//		}
+//		
+//		System.out.println("Round "+stage+" 그 ~ 상대는 : " + enemy[1]); // 상대이름 출력
+//		while(true) {
+//			System.out.println("행동을 선택하시오 1.공격 2.회복 3.회피");
 //			int menu = sc.nextInt();
-//			
-//			if(menu == 1) {
-//				controller.battle.attack();
+//			if(menu == 1) { // 공격
+//				controller.battle.attack(); 
 //			}
-//			else if(menu == 2) {
-//				controller.battle();
+//			else if(menu == 2) { // 회복
+//				controller.battle.heal();
 //			}
-//			else if(menu == 3) {
-//				controller.battle();
+//			else if(menu == 3) { // 회피
+//				controller.battle.dodge();
 //			}
+//			if (enemy.hp =< 0) {
+//				break;
+//				stage++;
+//			}else if ( CharacterDTO.hp =<0) {
+//				delet.name;
+//				break;
+//			}
+//		}
 
-		// 내 체력 + 상대 체력 표시
-		//
+		// 승리시
 
+		// 실패시
+
+		// 3단계 클리어시
 	}
-
-	// 승리시
-
-	// 실패시
-
-	// 3단계 클리어시
 }
