@@ -3,25 +3,30 @@ package 개발자괴롭히기;
 public class CharacterDTO {
 
 	// 필드
-	private String name;
-	private int hp;
-	private int intell;
-	private int fp;
-	private int mp;
-	private int ment;
-	private int salary;
+		private String name;
+		private int hp;
+		private int intell;
+		private int fp;
+		private int mp;
+		private int ment;
+		private String salary;
+       
+		
+		// 생성자 메소드
 
-//		name 메소드
-	public CharacterDTO(String name) {
-		super();
-		this.name = name;
-	}
+		public CharacterDTO(String name, int hp, int intell, int fp, int mp, int ment, String salary) {
+			super();
+			this.name = name;
+			this.hp = hp;
+			this.intell = intell;
+			this.fp = fp;
+			this.mp = mp;
+			this.ment = ment;
+			this.salary = salary;
+		}
 
-	public String getName() {
-		return name;
-	}
+		// getter 메소드
 
-	// state 메소드
 
 	public CharacterDTO(int hp, int intell, int fp, int mp, int ment) {
 		super();
@@ -30,31 +35,37 @@ public class CharacterDTO {
 		this.fp = fp;
 		this.mp = mp;
 		this.ment = ment;
-		this.salary = 0;
+		
 	}
 
-	public int getHp() {
-		return hp;
-	}
+		public String getName() {
+			return name;
+		}
 
-	public int getIntell() {
-		return intell;
-	}
 
-	public int getFp() {
-		return fp;
-	}
+		public int getHp() {
+			return hp;
+		}
 
-	public int getMp() {
-		return mp;
-	}
+		public int getIntell() {
+			return intell;
+		}
 
-	public int getMent() {
-		return ment;
-	}
-
-	public int getSalary() {
-		return salary;
-	}
-
+		public int getFp() {
+			return fp;
+		}
+		
+		public int getMp() {
+			return mp;
+		}
+		
+		public int getMent() {
+			return ment;
+		}
+	
+		public String getSalary() {
+			return salary;
+		}
+	
+	
 }
