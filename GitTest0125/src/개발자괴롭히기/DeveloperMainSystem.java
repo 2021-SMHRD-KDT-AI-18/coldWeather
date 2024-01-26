@@ -1,6 +1,7 @@
 package 개발자괴롭히기;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -58,11 +59,11 @@ public class DeveloperMainSystem {
 
 				if (info != null) {
 					System.out.println(info.getName() + "님 환영합니다.");
-				}
+				}else {
+					System.out.println("정확한 숫자를 입력해주세요.");
 
-			} else {
-				System.out.println("정확한 숫자를 입력해주세요.");
-			}
+			} 
+		}
 		}
 	}
 }
