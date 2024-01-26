@@ -23,11 +23,10 @@ public class DeveloperController {
 		return dao.delete(id);
 	}
 
-
 	public int update(DeveloperDTO dto) {
-
 
 		return dao.update(dto);
 	}
+
 
 }
