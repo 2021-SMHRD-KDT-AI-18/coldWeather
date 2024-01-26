@@ -1,4 +1,4 @@
-package model;
+package 개발자괴롭히기;
 
 import java.sql.Connection;
 
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 // DAO : Data Access Object
 // Member table 과 data를 주고 받는 기능들을 모아둔 클래스
 
-public class MemberDAO {
+public class DeveloperDAO {
 
 	Connection conn = null;
 	PreparedStatement psmt = null;
@@ -19,7 +19,7 @@ public class MemberDAO {
 
 	// 회원가입 기능
 
-	public int join(MemberDTO dto) {
+	public int join(DeveloperDTO dto) {
 
 		String id = dto.getId();
 		String pw = dto.getPw();
@@ -39,7 +39,7 @@ public class MemberDAO {
 			// 3.SQL문장 실행
 			// -PreparedStatement
 
-			String sql = "INSERT INTO MEMBER VALUES(?,?,?,?)"; // 바인드 변수
+			String sql = "INSERT INTO 회원 VALUES(?,?,?,?)"; // 바인드 변수
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
@@ -66,10 +66,10 @@ public class MemberDAO {
 	}
 
 //	로그인 기능
-	public MemberDTO login(String id, String pw) {
+	public DeveloperDTO login(String id, String pw) {
 		// DB 연동 해주는 메소드
 
-		MemberDTO info = null;
+		DeveloperDTO info = null;
 
 		try {
 			connection();
@@ -92,7 +92,7 @@ public class MemberDAO {
 				String loginPw = rs.getString("pw");
 				String loginName = rs.getString("name");
 				int loginAge = rs.getInt(4);
-				info = new MemberDTO(loginId, loginPw, loginName, loginAge);
+				info = new DeveloperDTO(loginId, loginPw, loginName, loginAge);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -104,9 +104,9 @@ public class MemberDAO {
 
 	}
 
-	public ArrayList<MemberDTO> memberList() {
+	public ArrayList<DeveloperDTO> memberList() {
 		// 회원들의 목록을 저장할 ArrayList 생성
-		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
+		ArrayList<DeveloperDTO> list = new ArrayList<DeveloperDTO>();
 
 		try {
 			connection();
@@ -123,7 +123,7 @@ public class MemberDAO {
 				String Name = rs.getString(3);
 				int Age = rs.getInt(4);
 
-				MemberDTO dto = new MemberDTO(Id, Pw, Name, Age);
+				DeveloperDTO dto = new DeveloperDTO(Id, Pw, Name, Age);
 
 				list.add(dto);
 
@@ -164,7 +164,7 @@ public class MemberDAO {
 		return cnt;
 	}
 
-	public int update(MemberDTO dto) {
+	public int update(DeveloperDTO dto) {
 //		String id = dto.getId();
 //		String pw = dto.getPw();
 //		String name = dto.getName();
@@ -219,9 +219,9 @@ public class MemberDAO {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			// 2. Connection 연결
 			// 연결하기 위해서는 3개의 정보 필요(주소, 계정,비밀번호)
-			String db_url = "jdbc:oracle:thin:@project-db-cgi.smhrd.com:1524:xe";
-			String db_id = "pbk_test";
-			String db_pw = "pbk_test";
+			String db_url = "jdbc:oracle:thin:@project-db-campus.smhrd.com:1524:xe";
+			String db_id = "campus_23K_AI18_p1_4";
+			String db_pw = "smhrd4";
 
 			conn = DriverManager.getConnection(db_url, db_id, db_pw);
 

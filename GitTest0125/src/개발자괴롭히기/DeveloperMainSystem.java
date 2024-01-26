@@ -1,4 +1,4 @@
-package view;
+package 개발자괴롭히기;
 
 import java.sql.Connection;
 
@@ -8,11 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import controller.MemberController;
-import model.MemberDAO;
-import model.MemberDTO;
 
-public class MainSystem {
+
+public class DeveloperMainSystem {
 
 	public static void main(String[] args) {
 
@@ -23,10 +21,10 @@ public class MainSystem {
 		// Controller : View 와 Model 을 이어주는 역할, 조종역할
 
 		Scanner sc = new Scanner(System.in);
-		MemberController controller = new MemberController();
+		DeveloperController controller = new DeveloperController();
 		// 모든 기능에서 사용할 수 있도록 전역변수 dto, dao 생성
 
-		MemberDTO dto = null;
+		DeveloperDTO dto = null;
 
 		while (true) {
 			// CRUD (create / read / update / delete)
@@ -44,7 +42,7 @@ public class MainSystem {
 				System.out.print("나이입력 : ");
 				int age = sc.nextInt();
 
-				dto = new MemberDTO(id, pw, name, age);
+				dto = new DeveloperDTO(id, pw, name, age);
 				int cnt = controller.join(dto);
 
 				if (cnt > 0) {
@@ -63,7 +61,7 @@ public class MainSystem {
 //				한번에 로그인 하려면 새로운 메소드를 하나 묶어서 만들면 됨
 //				new MemberDTO(id, pw);
 
-				MemberDTO info = controller.login(id, pw);
+				DeveloperDTO info = controller.login(id, pw);
 
 				if (info != null) {
 					System.out.println(info.getName() + "님 환영합니다.");
@@ -73,7 +71,7 @@ public class MainSystem {
 
 				System.out.println("===전체 회원 정보 조회===");
 				System.out.println("ID\tPW\tNAME\tAGE\t");
-				ArrayList<MemberDTO> list = controller.memberList();
+				ArrayList<DeveloperDTO> list = controller.memberList();
 				for (int i = 0; i < list.size(); i++) {
 					System.out.print(list.get(i).getId() + "\t");
 					System.out.print(list.get(i).getPw() + "\t");
@@ -109,7 +107,7 @@ public class MainSystem {
 				System.out.print("수정할 AGE 입력 : ");
 				int age = sc.nextInt();
 
-				dto = new MemberDTO(id, pw, name, age);
+				dto = new DeveloperDTO(id, pw, name, age);
 				int cnt = controller.update(dto);
 
 				if (cnt > 0) {

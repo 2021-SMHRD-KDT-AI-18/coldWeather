@@ -1,22 +1,20 @@
-package controller;
+package 개발자괴롭히기;
 
 import java.util.ArrayList;
-import model.MemberDAO;
-import model.MemberDTO;
 
-public class MemberController {
+public class DeveloperController {
 
-	private MemberDAO dao = new MemberDAO();
+	private DeveloperDAO dao = new DeveloperDAO();
 
-	public int join(MemberDTO dto) {
+	public int join(DeveloperDTO dto) {
 		return dao.join(dto);
 	}
 
-	public MemberDTO login(String id, String pw) {
+	public DeveloperDTO login(String id, String pw) {
 		return dao.login(id, pw);
 	}
 
-	public ArrayList<MemberDTO> memberList() {
+	public ArrayList<DeveloperDTO> memberList() {
 		return dao.memberList();
 
 	}
@@ -25,7 +23,11 @@ public class MemberController {
 		return dao.delete(id);
 	}
 
+<<<<<<< HEAD
 	public int update(MemberDTO dto) {
+=======
+	public int update(DeveloperDTO dto) {
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-18/nameless2.git
 
 		return dao.update(dto);
 	}

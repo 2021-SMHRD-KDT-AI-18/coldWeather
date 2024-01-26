@@ -1,4 +1,4 @@
-package model;
+package 개발자괴롭히기;
 
 //DTO: Data Transfer Object
 
@@ -6,7 +6,13 @@ package model;
 //VO: Setter 메소드를 사용하지 않는 것
 //(정확하게는 이 클래스는 VO 가 맞음)
 
+<<<<<<< HEAD
 public class MemberDTO {
+=======
+
+
+public class DeveloperDTO {
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-18/nameless2.git
 
 	// 필드
 	private String id;
@@ -16,7 +22,7 @@ public class MemberDTO {
 
 	// 생성자 메소드
 
-	public MemberDTO(String id, String pw, String name, int age) {
+	public DeveloperDTO(String id, String pw, String name, int age) {
 		super();
 		this.id = id;
 		this.pw = pw;
@@ -26,7 +32,7 @@ public class MemberDTO {
 
 	// getter 메소드
 
-	public MemberDTO(String id, String pw) {
+	public DeveloperDTO(String id, String pw) {
 		super();
 		this.id = id;
 		this.pw = pw;
