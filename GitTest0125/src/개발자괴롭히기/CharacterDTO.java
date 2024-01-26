@@ -3,6 +3,7 @@ package 개발자괴롭히기;
 public class CharacterDTO {
 
 	// 필드
+
 		private String name;
 		private int hp;
 		private int intell;
@@ -11,49 +12,50 @@ public class CharacterDTO {
 		private int ment;
 		private int salary;
        
-		
-		// 생성자 메소드
+  //name 메소드
+	public CharacterDTO(String name) {
+		super();
+		this.name = name;
+	}
 
-		public CharacterDTO(int name, int hp, int intell, int fp, int mp, int ment,0) {
-			super();
-			this.name = name;
-			this.hp = hp;
-			this.intell = intell;
-			this.fp = fp;
-			this.mp = mp;
-			this.ment = ment;
-			this.salary = 0;
-		}
+	public String getName() {
+		return name;
+	}
 
-		// getter 메소드
+	// state 메소드
 
-		public String getName() {
-			return name;
-		}
+	public CharacterDTO(int hp, int intell, int fp, int mp, int ment) {
+		super();
+		this.hp = hp;
+		this.intell = intell;
+		this.fp = fp;
+		this.mp = mp;
+		this.ment = ment;
+		this.salary = 0;
+	}
 
-		public int getHp() {
-			return hp;
-		}
+	public int getHp() {
+		return hp;
+	}
 
-		public int getIntell() {
-			return intell;
-		}
+	public int getIntell() {
+		return intell;
+	}
 
-		public int getFp() {
-			return fp;
-		}
-		
-		public int getMp() {
-			return mp;
-		}
-		
-		public int getMent() {
-			return ment;
-		}
-	
-		public String getSalary() {
-			return salary;
-		}
-	
-	
+	public int getFp() {
+		return fp;
+	}
+
+	public int getMp() {
+		return mp;
+	}
+
+	public int getMent() {
+		return ment;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+
 }
