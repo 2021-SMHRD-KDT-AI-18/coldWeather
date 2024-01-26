@@ -9,28 +9,31 @@ public class CharacterCreate {
 		Scanner scanner = new Scanner(System.in);
 
 		 // 캐릭터 이름 입력 받기
-        System.out.println("캐릭터 이름을 입력하세요:");
+        System.out.print("캐릭터 이름을 입력하세요:");
         String Name = scanner.nextLine();
 
         // 능력치 입력 받기
         System.out.println("능력치를 배분하세요.(전체 총합이 100이 되어야 합니다)");
 
+        int h = 200;
+//        String salary = "0";
+        
         // 각 능력치 입력 받기
-        int health = getStat("체력", 100);
-        int intelligence = getStat("지능력", 100 - health);
-        int faithPower = getStat("신앙력", 100 - health - intelligence);
-        int magicPower = getStat("마력", 100 - health - intelligence - faithPower);
-        int mentality = getStat("정신력", 100 - health - intelligence - faithPower - magicPower);
+        int hp = getStat("체력", 100);
+        int intell = getStat("지능력", 100 - hp);
+        int fp = getStat("신앙력", 100 - hp - intell);
+        int mp = getStat("마력", 100 - hp - intell - fp);
+        int ment = getStat("정신력", 100 - hp - intell - fp - mp);
 
         // 데이터베이스에 연결하고 캐릭터 정보 저장 (이 부분은 데이터베이스 대신에 출력으로 대체)
         System.out.println("캐릭터 정보:");
         System.out.println("이름: " + Name);
-        System.out.println("체력: " + health);
-        System.out.println("지능: " + intelligence);
-        System.out.println("신앙력: " + faithPower);
-        System.out.println("마력: " + magicPower);
-        System.out.println("정신력: " + mentality);
-
+        System.out.println("체력: " + (hp + h));
+        System.out.println("지능: " + intell);
+        System.out.println("신앙력: " + fp);
+        System.out.println("마력: " + mp);
+        System.out.println("정신력: " + ment);
+//        System.out.println("연봉: " + salary + "만원");
         // 리소스 정리
         scanner.close();
     }
