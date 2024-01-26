@@ -203,44 +203,45 @@ public class DeveloperMainSystem {
 
 		}
 		
-// 		배틀 시스템
-//		enemy e1 = new enemy("pbkMK1", 50, 50, 50, 50, 50);
-//		enemy e2 = new enemy("pbkMK2", 60, 60, 60, 60, 60);
-//		enemy e3 = new enemy("pbkMK3", 70, 70, 70, 70, 70);
-//		System.out.println("대결을 시작합니다");
-
-		//		String enemy;
-//		int stage = 1;
-//		while(true) {
-//		if(stage == 1) {
-//
-//		}else if (stage==2) {
-//			
-//		}else if (stage==3) {
-//			
-//		}
-//		
-//		System.out.println("Round "+stage+" 그 ~ 상대는 : " + enemy[1]); // 상대이름 출력
-//		while(true) {
-//			System.out.println("행동을 선택하시오 1.공격 2.회복 3.회피");
-//			int menu = sc.nextInt();
-//			if(menu == 1) { // 공격
-//				controller.battle.attack(); 
-//			}
-//			else if(menu == 2) { // 회복
-//				controller.battle.heal();
-//			}
-//			else if(menu == 3) { // 회피
-//				controller.battle.dodge();
-//			}
-//			if (enemy.hp =< 0) {
-//				break;
-//				stage++;
-//			}else if ( CharacterDTO.hp =<0) {
-//				delet.name;
-//				break;
-//			}
-//		}
+ 		//배틀 시스템
+		
+		
+		
+		System.out.println("대결을 시작합니다");
+		
+		int stage = 1;
+		while(true) {
+		if(stage == 1) {
+			enemy e1 = new enemy("pbkMK1", 50, 50, 50, 50, 50); 
+		}else if (stage==2) {
+			enemy e1 = new enemy("pbkMK2", 60, 60, 60, 60, 60);
+		}else if (stage==3) {
+			enemy e1 = new enemy("pbkMK3", 70, 70, 70, 70, 70);
+		}
+		
+		System.out.println("Round "+stage+" 그 ~ 상대는 : " + e1.name); // 상대이름 출력
+	
+		while(true) {
+			System.out.println("행동을 선택하시오 1.공격 2.회복 3.회피");
+			int menu = sc.nextInt();
+			if(menu == 1) { // 공격
+				controller.battle.attack();   //플레이어 공격
+			}
+			else if(menu == 2) { // 회복
+				controller.battle.heal();
+			}
+			else if(menu == 3) { // 회피
+				controller.battle.dodge();
+			}
+			if (e1.hp =< 0) { // 적체력 0이하 일떄
+				break; 
+				stage++; // 다음스테이지
+			}else if ( CharacterDTO.hp =<0) { //플레이어 체력 0이하 일때
+				delet.name; // 캐삭
+				break;
+				
+			}
+		}
 
 		// 승리시
 
