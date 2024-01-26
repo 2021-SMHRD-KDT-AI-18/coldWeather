@@ -103,11 +103,11 @@ public class DeveloperDAO {
 
 	public ArrayList<DeveloperDTO> memberList() {
 		// 회원들의 목록을 저장할 ArrayList 생성
-		ArrayList<DeveloperDTO> list = new ArrayList<DeveloperDTO>();
+		ArrayList<DeveloperDTO> list = new ArrayList<DeveloperDTO>(); // 나중에 characterDTO로 변경
 
 		try {
 			connection();
-			String sql = " select * from member";
+			String sql = " select * from member order by id";
 			psmt = conn.prepareStatement(sql);
 
 			rs = psmt.executeQuery();
@@ -119,6 +119,7 @@ public class DeveloperDAO {
 
 
 				DeveloperDTO dto = new DeveloperDTO(Id, Pw);
+				// 나중에 characterDTO로 변경
 
 				list.add(dto);
 

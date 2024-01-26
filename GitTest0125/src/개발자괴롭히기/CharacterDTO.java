@@ -11,14 +11,21 @@ public class CharacterDTO {
 	private int ment;
 	private int salary;
 
+	public CharacterDTO(String name, int hp, int intell, int fp, int mp, int ment) {
+		super();
+		this.name = name;
+		this.hp = hp;
+		this.intell = intell;
+		this.fp = fp;
+		this.mp = mp;
+		this.ment = ment;
+		this.salary = 0;
+	}
+
 //		name 메소드
 	public CharacterDTO(String name) {
 		super();
 		this.name = name;
-	}
-
-	public String getName() {
-		return name;
 	}
 
 	// state 메소드
@@ -30,7 +37,11 @@ public class CharacterDTO {
 		this.fp = fp;
 		this.mp = mp;
 		this.ment = ment;
-		this.salary = 0;
+
+	}
+
+	public String getName() {
+		return name;
 	}
 
 	public int getHp() {
