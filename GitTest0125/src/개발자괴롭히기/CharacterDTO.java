@@ -3,7 +3,7 @@ package 개발자괴롭히기;
 public class CharacterDTO {
 
 	// 필드
-		private int name;
+		private String name;
 		private int hp;
 		private int intell;
 		private int fp;
@@ -26,8 +26,8 @@ public class CharacterDTO {
 		}
 
 		// getter 메소드
-		
-		public int getName() {
+
+		public String getName() {
 			return name;
 		}
 
