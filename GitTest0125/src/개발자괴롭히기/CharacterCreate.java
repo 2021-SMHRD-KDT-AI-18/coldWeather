@@ -15,6 +15,9 @@ public class CharacterCreate {
         // 능력치 입력 받기
         System.out.println("능력치를 배분하세요.(전체 총합이 100이 되어야 합니다)");
 
+        int h = 100;
+        int health = health + h;
+        
         // 각 능력치 입력 받기
         int health = getStat("체력", 100);
         int intelligence = getStat("지능력", 100 - health);
