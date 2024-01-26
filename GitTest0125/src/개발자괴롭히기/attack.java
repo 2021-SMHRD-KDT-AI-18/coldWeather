@@ -9,6 +9,8 @@ public class attack {
 	int god = 1; // 신앙력 = 치명타 확률 기본 치명타 확률 10% + 1당 1% 90p 찍으면 100퍼 치명타
 	int ma = 1; // 마력 = 치명타 데미지 1p 10%
 	int madi = 1; // 정신력 = 회피율
+	
+	
 	Random ran = new Random();
 	
 	int luck = ran.nextInt(100) + god; // 치명타 확률
@@ -22,5 +24,9 @@ public class attack {
 
 	double attack = damage; // 최종 데미지
 
+	
+	
+	
+	
 	return attack;
 }
