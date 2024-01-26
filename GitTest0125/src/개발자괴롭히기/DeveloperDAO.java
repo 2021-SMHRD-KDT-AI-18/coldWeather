@@ -160,34 +160,6 @@ public class DeveloperDAO {
 		return cnt;
 	}
 
-	public int update(DeveloperDTO dto) {
-//		String id = dto.getId();
-//		String pw = dto.getPw();
-//		String name = dto.getName();
-//		int age = dto.getAge();
-
-		// 수정 메소드
-		connection();
-		int cnt = 0;
-
-		String sql = " UPDATE MEMBER SET PW = ? WHERE ID = ? ";
-
-		try {
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, dto.getPw());
-			psmt.setString(4, dto.getId());
-
-			cnt = psmt.executeUpdate();
-
-		}
-
-		catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		return cnt;
-	}
 
 	private void close() {
 		try {

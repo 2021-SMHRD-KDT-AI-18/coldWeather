@@ -148,7 +148,7 @@ public class DeveloperMainSystem {
 
 		while (true) {
 			System.out.println("=======1.게임시작======");
-			System.out.println("=======2.랭킹 확인======");
+			System.out.println("=======2.랭킹확인======");
 			int menu = sc.nextInt();
 
 			// 1. 게임시작
@@ -161,9 +161,10 @@ public class DeveloperMainSystem {
 				System.out.println("====랭킹 조회====");
 				ArrayList<CharacterDTO> list = controller.CharacterList();// 나중에 characterDTO로 변경
 				for (int i = 0; i < list.size(); i++) {
-					System.out.print(list.get(i).getName() + "\t");
+					System.out.print((i+1) +"위>>" + list.get(i).getName() + "\t");
 
 				}
+				System.out.println();
 				System.out.println();
 			}
 
@@ -175,7 +176,6 @@ public class DeveloperMainSystem {
 			System.out.println("캐릭터를 생성합니다.");
 			System.out.print("이름을 입력해주세요 :");
 			String name = sc.next();
-
 			System.out.println("능력치를 분배해주세요");
 			System.out.println("1.체력 2.지능 3.신앙력 4.마력 5.정신력");
 			System.out.print("체력 : ");
