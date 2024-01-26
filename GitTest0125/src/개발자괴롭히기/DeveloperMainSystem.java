@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import oracle.net.aso.s;
+
 public class DeveloperMainSystem {
 
 	public static void main(String[] args) {
@@ -23,6 +25,7 @@ public class DeveloperMainSystem {
 		// 모든 기능에서 사용할 수 있도록 전역변수 dto, dao 생성
 
 		DeveloperDTO dto = null;
+		CharacterDTO cdto = null;
 
 		while (true) {
 			// CRUD (create / read / update / delete)
@@ -100,7 +103,7 @@ public class DeveloperMainSystem {
 							+ "                                                                                                    \n"
 							+ "                                                                                                    ");
 
-			System.out.print("===================== 1.회원등록=====================");
+			System.out.println("===================== 1.회원등록====================");
 			System.out.println("===================== 2.로그인=====================");
 			System.out.print(" >>> ");
 			int menu = sc.nextInt();
@@ -142,24 +145,102 @@ public class DeveloperMainSystem {
 				}
 			}
 		}
-		
-		
-		while(true) {
+
+		while (true) {
 			System.out.println("=======1.게임시작======");
 			System.out.println("=======2.랭킹 확인======");
-			
+			int menu = sc.nextInt();
+
 			// 1. 게임시작
-			if(menu==1) {
-				
+			if (menu == 1) {
+				break;
 			}
-			// 2. 랭킹 
-			
-		else if(menu==2) {
-			ArrayList<CharcterDTO> list = controller.memberlist();
+			// 2. 랭킹
+
+			else if (menu == 2) {
+				System.out.println("====랭킹 조회====");
+				ArrayList<DeveloperDTO> list = controller.memberList(); // 나중에 characterDTO로 변경
+				for (int i = 0; i < list.size(); i++) {
+					System.out.print(list.get(i).getId() + "\t");
+					System.out.print(list.get(i).getPw() + "\t");
+
+				}
+				System.out.println();
+			}
+
 		}
-			
-			
-			
+		// 캐릭터 생성 및 능력치 분배
+
+		while (true) {
+
+			System.out.println("캐릭터를 생성합니다.");
+			System.out.print("이름을 입력해주세요 :");
+			String name = sc.next();
+
+			cdto = new CharacterDTO(name);
+			// 컨트롤러에 요청 후에 받아오면 됨
+			int cnt = controller.inputName(cdto);
+
+			if (cnt > 0) {
+				System.out.println("이름 등록 성공");
+				break;
+			} else {
+				System.out.println("이름 등록 실패");
+			}
 		}
+
+		while (true) {
+			System.out.println("능력치를 분배해주세요");
+			System.out.println("1.체력 2.지능 3.신앙력 4.마력 5.정신력");
+			System.out.print("체력 : ");
+			int health = sc.nextInt();
+			System.out.print("지능 : ");
+			int intelligence = sc.nextInt();
+			System.out.print("신앙력 : ");
+			int faithPower = sc.nextInt();
+			System.out.print("마력 : ");
+			int magicPower = sc.nextInt();
+			System.out.print("정신력 : ");
+			int mentality = sc.nextInt();
+
+			cdto = new CharacterDTO(health, intelligence, faithPower, magicPower, mentality);
+			// CharacterDTO 만들어지면 컨트롤러에 입력해서 받아오면 됨
+			int cnt = controller.getStat(cdto);
+
+			if (cnt > 0) {
+				System.out.println("분배가 완료되었습니다 게임을 시작합니다");
+				break;
+			} else {
+				System.out.println("능력치 분배 실패");
+			}
+
+		}
+
+		// 배틀 시스템
+
+//		System.out.println("대결을 시작합니다");
+//		while(true) {
+//			
+//			int menu = sc.nextInt();
+//			
+//			if(menu == 1) {
+//				controller.battle.attack();
+//			}
+//			else if(menu == 2) {
+//				controller.battle();
+//			}
+//			else if(menu == 3) {
+//				controller.battle();
+//			}
+
+		// 내 체력 + 상대 체력 표시
+		//
+
 	}
+
+	// 승리시
+
+	// 실패시
+
+	// 3단계 클리어시
 }
