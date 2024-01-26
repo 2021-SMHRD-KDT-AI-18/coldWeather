@@ -26,11 +26,8 @@ public class MemberController {
 	}
 
 	public int update(MemberDTO dto) {
-		
+
 		return dao.update(dto);
 	}
-	
-	
-	
 
 }

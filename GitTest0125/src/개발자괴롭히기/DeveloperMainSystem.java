@@ -110,7 +110,7 @@ public class MainSystem {
 
 				dto = new MemberDTO(id, pw, name, age);
 				int cnt = controller.update(dto);
-				
+
 				if (cnt > 0) {
 					System.out.println("수정 성공");
 				} else {
