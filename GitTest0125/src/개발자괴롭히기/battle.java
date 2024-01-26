@@ -25,4 +25,9 @@ public class battle {
 
 		return attack;
 	}
+
 }
+
+	public double heal() {
+		
+	}
