@@ -28,13 +28,14 @@ public class CharacterDAO {
 
 		connection();
 		try {
-			String sql = "INSERT INTO character VALUES (?,?,?,?,?)";
+			String sql = "INSERT INTO character VALUES (?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, hp);
-			psmt.setInt(2, intell);
-			psmt.setInt(3, fp);
-			psmt.setInt(4, mp);
-			psmt.setInt(5, ment);
+			psmt.setString(1, name);
+			psmt.setInt(2, hp);
+			psmt.setInt(3, intell);
+			psmt.setInt(4, fp);
+			psmt.setInt(5, mp);
+			psmt.setInt(6, ment);
 			cnt = psmt.executeUpdate();
 
 		} catch (Exception e) {
