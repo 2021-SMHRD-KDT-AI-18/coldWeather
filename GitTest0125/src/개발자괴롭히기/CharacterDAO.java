@@ -99,7 +99,7 @@ public class CharacterDAO {
 	private void connection() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String db_url = "jdbc:oracle:thin@project-db-campus.smhrd.com:1524:xe";
+			String db_url = "jdbc:oracle:thin:@project-db-campus.smhrd.com:1524:xe";
 			String db_id = "campus_23K_AI18_p1_4";
 			String db_pw = "smhrd4";
 			conn = DriverManager.getConnection(db_url, db_id, db_pw);
