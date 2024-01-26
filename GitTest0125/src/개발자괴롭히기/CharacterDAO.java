@@ -16,6 +16,7 @@ public class CharacterDAO {
 
 	// 이름, 스탯 입력 getName, getStats
 
+
 	public int inputStats(CharacterDTO cdto) {
 		String name = cdto.getName();
 		int hp = cdto.getHp();
@@ -27,7 +28,7 @@ public class CharacterDAO {
 
 		connection();
 		try {
-			String sql = "INSERT INTO VALUES (?,?,?,?,?)";
+			String sql = "INSERT INTO character VALUES (?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, hp);
 			psmt.setInt(2, intell);

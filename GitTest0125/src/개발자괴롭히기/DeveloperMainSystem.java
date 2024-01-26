@@ -177,19 +177,6 @@ public class DeveloperMainSystem {
 			System.out.print("이름을 입력해주세요 :");
 			String name = sc.next();
 
-			cdto = new CharacterDTO(name);
-			// 컨트롤러에 요청 후에 받아오면 됨
-			int cnt = controller.inputName(cdto);
-
-			if (cnt > 0) {
-				System.out.println("이름 등록 성공");
-				break;
-			} else {
-				System.out.println("이름 등록 실패");
-			}
-		}
-
-		while (true) {
 			System.out.println("능력치를 분배해주세요");
 			System.out.println("1.체력 2.지능 3.신앙력 4.마력 5.정신력");
 			System.out.print("체력 : ");
@@ -203,7 +190,7 @@ public class DeveloperMainSystem {
 			System.out.print("정신력 : ");
 			int mentality = sc.nextInt();
 
-			cdto = new CharacterDTO(health, intelligence, faithPower, magicPower, mentality);
+			cdto = new CharacterDTO(name, health, intelligence, faithPower, magicPower, mentality);
 			// CharacterDTO 만들어지면 컨트롤러에 입력해서 받아오면 됨
 			int cnt = controller.getStat(cdto);
 
