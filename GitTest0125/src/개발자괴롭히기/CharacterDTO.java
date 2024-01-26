@@ -23,14 +23,14 @@ public class CharacterDTO {
 
 	// state 메소드
 
-	public CharacterDTO(int hp, int intell, int fp, int mp, int ment, int salary) {
+	public CharacterDTO(int hp, int intell, int fp, int mp, int ment) {
 		super();
 		this.hp = hp;
 		this.intell = intell;
 		this.fp = fp;
 		this.mp = mp;
 		this.ment = ment;
-		this.salary = salary;
+		this.salary = 0;
 	}
 
 	public int getHp() {
