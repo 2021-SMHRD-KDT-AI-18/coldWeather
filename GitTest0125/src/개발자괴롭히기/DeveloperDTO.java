@@ -6,13 +6,11 @@ package 개발자괴롭히기;
 //VO: Setter 메소드를 사용하지 않는 것
 //(정확하게는 이 클래스는 VO 가 맞음)
 
-<<<<<<< HEAD
-public class MemberDTO {
-=======
+
 
 
 public class DeveloperDTO {
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-18/nameless2.git
+
 
 	// 필드
 	private String id;

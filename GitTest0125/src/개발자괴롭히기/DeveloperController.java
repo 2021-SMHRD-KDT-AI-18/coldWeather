@@ -23,11 +23,9 @@ public class DeveloperController {
 		return dao.delete(id);
 	}
 
-<<<<<<< HEAD
-	public int update(MemberDTO dto) {
-=======
+
 	public int update(DeveloperDTO dto) {
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-18/nameless2.git
+
 
 		return dao.update(dto);
 	}
