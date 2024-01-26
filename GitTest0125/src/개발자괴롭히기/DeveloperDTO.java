@@ -1,4 +1,4 @@
-package model;
+package 개발자괴롭히기;
 
 //DTO: Data Transfer Object
 //데이터를 저장하고 건내는 용도의 클래스
