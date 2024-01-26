@@ -5,34 +5,19 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class CharacterDAO {
 
 	Connection conn = null;
 	PreparedStatement psmt = null;
-	ResultSet rs =null;
+	ResultSet rs = null;
 	int cnt = 0;
 
 	// 이름, 스탯 입력 getName, getStats
 
-	public int inputName(CharacterDTO cdto) {
-		String name = cdto.getName();
-		connection();
-		try {
-			String sql = "INSERT INTO __ VALUES (?)";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, name);
-			cnt = psmt.executeUpdate();
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		return cnt;
-	}
-
 	public int inputStats(CharacterDTO cdto) {
+		String name = cdto.getName();
 		int hp = cdto.getHp();
 		int intell = cdto.getIntell();
 		int fp = cdto.getFp();
@@ -59,25 +44,54 @@ public class CharacterDAO {
 		return cnt;
 	}
 
-	
-	private void close() {
-		
+	public ArrayList<CharacterDTO> CharacterList() {
+
+		ArrayList<CharacterDTO> list = new ArrayList<CharacterDTO>();
+
 		try {
-			if(rs != null) {
-			rs.close();
-			
+			connection();
+			String sql = " select * from character order by salary";// 샐러리 구현 할 것
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				String Name = rs.getString(1);
+
+				CharacterDTO cdto = new CharacterDTO(Name);
+
+				list.add(cdto);
+
+			}
 		}
-		if(psmt != null) {
-			psmt.close();
+
+		catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			close();
 		}
-		if(conn != null) {
-			conn.close();
-		}
-		
+
+		return list;
+
+	}
+
+	private void close() {
+
+		try {
+			if (rs != null) {
+				rs.close();
+
+			}
+			if (psmt != null) {
+				psmt.close();
+			}
+			if (conn != null) {
+				conn.close();
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	private void connection() {
@@ -87,22 +101,20 @@ public class CharacterDAO {
 			String db_id = "campus_23K_AI18_p1_4";
 			String db_pw = "smhrd4";
 			conn = DriverManager.getConnection(db_url, db_id, db_pw);
-			
-			if(conn != null) {
-				
+
+			if (conn != null) {
+
 			} else {
 				System.out.println("Connection 연결 실패");
 			}
-			
-		}catch(ClassNotFoundException e) {
-				
-				e.printStackTrace();
-			}
-			 catch (SQLException e) {
+
+		} catch (ClassNotFoundException e) {
+
+			e.printStackTrace();
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		
+
 	}
 
 }
