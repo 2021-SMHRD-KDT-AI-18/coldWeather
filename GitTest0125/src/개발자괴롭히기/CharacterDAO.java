@@ -18,7 +18,7 @@ public class CharacterDAO {
 		String name = cdto.getName();
 		connection();
 		try {
-			String sql = "INSERT INTO __ VALUES (?)";
+			String sql = "INSERT INTO character VALUES (?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, name);
 			cnt = psmt.executeUpdate();
@@ -41,7 +41,7 @@ public class CharacterDAO {
 
 		connection();
 		try {
-			String sql = "INSERT INTO VALUES (?,?,?,?,?)";
+			String sql = "INSERT INTO character VALUES (?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, hp);
 			psmt.setInt(2, intell);
