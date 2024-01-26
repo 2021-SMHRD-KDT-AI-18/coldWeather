@@ -15,14 +15,12 @@ public class BattleDAO {
 
 	public double attack(CharacterDTO cdto) {
 
-		int Hp = cdto.getHealth(); // 체력
-		int iq = cdto.getIntelligence(); // 지능 ( 데미지관련 스텟)
-		int fp = cdto.getFaithPower(); // 신앙력 ( 치명타확률 관련 스텟)
-		int mp = cdto.getMagicPower(); // 마력 ( 치명타 데미지 관련 스텟)
-		int mt = cdto.getMentality(); // 정신력
+		int it = cdto.getIntell(); // 지능 ( 데미지관련 스텟)
+		int fp = cdto.getFp(); // 신앙력 ( 치명타확률 관련 스텟)
+		int mp = cdto.getMp(); // 마력 ( 치명타 데미지 관련 스텟)
 
 		int luck = ran.nextInt(100) + fp; // 치명타 확률
-		int damage = ran.nextInt(100) + iq * 3; // 데미지에 지능수 만큼 추가 데미지
+		int damage = ran.nextInt(100) + it * 3; // 데미지에 지능수 만큼 추가 데미지
 
 		if (luck > 90) {
 			damage = (int) (damage * (1 + (0.1 * mp))); // 치명타 데미지
@@ -43,7 +41,7 @@ public class BattleDAO {
 //	}
 	
 	public boolean dodge(CharacterDTO cdto) {
-		int mt = cdto.getMentality(); // 정신력
+		int mt = cdto.getMent(); // 정신력
 		
 		int dodge = ran.nextInt(100)+mt;
 		
