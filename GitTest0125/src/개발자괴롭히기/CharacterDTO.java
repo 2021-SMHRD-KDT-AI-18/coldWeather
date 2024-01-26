@@ -28,6 +28,11 @@ public class CharacterDTO {
 		// getter 메소드
 
 
+	public CharacterDTO(String name) {
+			super();
+			this.name = name;
+		}
+
 	public CharacterDTO(int hp, int intell, int fp, int mp, int ment) {
 		super();
 		this.hp = hp;
@@ -37,6 +42,7 @@ public class CharacterDTO {
 		this.ment = ment;
 		
 	}
+
 
 		public String getName() {
 			return name;

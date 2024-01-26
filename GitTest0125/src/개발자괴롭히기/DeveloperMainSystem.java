@@ -25,7 +25,7 @@ public class DeveloperMainSystem {
 		// 모든 기능에서 사용할 수 있도록 전역변수 dto, dao 생성
 
 		DeveloperDTO dto = null;
-		characterDTO cdto = null;
+		CharacterDTO cdto = null;
 
 		while (true) {
 			// CRUD (create / read / update / delete)
@@ -103,7 +103,7 @@ public class DeveloperMainSystem {
 							+ "                                                                                                    \n"
 							+ "                                                                                                    ");
 
-			System.out.print("===================== 1.회원등록=====================");
+			System.out.println("===================== 1.회원등록====================");
 			System.out.println("===================== 2.로그인=====================");
 			System.out.print(" >>> ");
 			int menu = sc.nextInt();
@@ -174,12 +174,12 @@ public class DeveloperMainSystem {
 		while (true) {
 
 			System.out.println("캐릭터를 생성합니다.");
-			System.out.println("능력치를 분배해주세요.");
-			System.out.println("이름을 입력해주세요.");
+			System.out.print("이름을 입력해주세요 :");
+			String name = sc.next();
 
-			cdto = new CharacterDTO(NICKNAME);
-			//컨트롤러에 요청 후에 받아오면 됨
-			int cnt = controller.getName(cdto);
+			cdto = new CharacterDTO(name);
+			// 컨트롤러에 요청 후에 받아오면 됨
+			int cnt = controller.inputName(cdto);
 
 			if (cnt > 0) {
 				System.out.println("이름 등록 성공");
@@ -204,7 +204,7 @@ public class DeveloperMainSystem {
 			int mentality = sc.nextInt();
 
 			cdto = new CharacterDTO(health, intelligence, faithPower, magicPower, mentality);
-			//CharacterDTO 만들어지면 컨트롤러에 입력해서 받아오면 됨
+			// CharacterDTO 만들어지면 컨트롤러에 입력해서 받아오면 됨
 			int cnt = controller.getStat(cdto);
 
 			if (cnt > 0) {
@@ -218,41 +218,29 @@ public class DeveloperMainSystem {
 
 		// 배틀 시스템
 
-		System.out.println("대결을 시작합니다");
-		while(true) {
-			
-			int menu = sc.nextInt();
-			
-			if(menu == 1) {
-				controller.battle.attack();
-			}
-			else if(menu == 2) {
-				controller.battle();
-			}
-			else if(menu == 3) {
-				controller.battle();
-			}
-			
-			
-			
-			
-			
-			
-			
-			// 내 체력   +  상대 체력 표시
-			// 
-			
-			
-			
-		}
-		
-		//승리시
-		
-		
-		
-		//실패시
-		
-		
-		//3단계 클리어시
+//		System.out.println("대결을 시작합니다");
+//		while(true) {
+//			
+//			int menu = sc.nextInt();
+//			
+//			if(menu == 1) {
+//				controller.battle.attack();
+//			}
+//			else if(menu == 2) {
+//				controller.battle();
+//			}
+//			else if(menu == 3) {
+//				controller.battle();
+//			}
+
+		// 내 체력 + 상대 체력 표시
+		//
+
 	}
+
+	// 승리시
+
+	// 실패시
+
+	// 3단계 클리어시
 }

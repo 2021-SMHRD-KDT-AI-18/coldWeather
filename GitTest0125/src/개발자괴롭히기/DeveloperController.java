@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class DeveloperController {
 
 	private DeveloperDAO dao = new DeveloperDAO();
+	private CharacterDAO cdao = new CharacterDAO();
 
 	public int join(DeveloperDTO dto) {
 		return dao.join(dto);
@@ -28,7 +29,14 @@ public class DeveloperController {
 		return dao.update(dto);
 	}
 
+	public int inputName(CharacterDTO cdto) {
+		return cdao.inputName(cdto);
+
 	}
 
+	public int getStat(CharacterDTO cdto) {
 
+		return cdao.inputName(cdto);
+	}
 
+}
