@@ -23,8 +23,7 @@ public class DeveloperDAO {
 
 		String id = dto.getId();
 		String pw = dto.getPw();
-		String name = dto.getName();
-		int age = dto.getAge();
+
 		int cnt = 0;
 		// JDBC 회원등록
 		// 1. 드라이버 로드 (동적로딩)
@@ -39,13 +38,11 @@ public class DeveloperDAO {
 			// 3.SQL문장 실행
 			// -PreparedStatement
 
-			String sql = "INSERT INTO 회원 VALUES(?,?,?,?)"; // 바인드 변수
+			String sql = "INSERT INTO member VALUES(?,?)"; // 바인드 변수
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			psmt.setString(2, pw);
-			psmt.setString(3, name);
-			psmt.setInt(4, age);
 
 			// exexuteUpdate()는 실행한 문장의 개수를 반환
 			cnt = psmt.executeUpdate(); // 테이블에 영향을 주는 것들은 update
@@ -66,7 +63,7 @@ public class DeveloperDAO {
 	}
 
 //	로그인 기능
-	public DeveloperDTO login(String id, String pw) {
+	public DeveloperDTO login(String ID, String PW) {
 		// DB 연동 해주는 메소드
 
 		DeveloperDTO info = null;
@@ -77,8 +74,8 @@ public class DeveloperDAO {
 			String sql = " select * from member where id=? and pw=? ";
 
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, id);
-			psmt.setString(2, pw);
+			psmt.setString(1, ID);
+			psmt.setString(2, PW);
 
 //			executeUpdate() : insert, update, delete
 //			실행에 성공했을 때 수행된 row 수를 반환 (int 타입)
@@ -90,9 +87,8 @@ public class DeveloperDAO {
 			if (rs.next()) {
 				String loginId = rs.getString(1);
 				String loginPw = rs.getString("pw");
-				String loginName = rs.getString("name");
-				int loginAge = rs.getInt(4);
-				info = new DeveloperDTO(loginId, loginPw, loginName, loginAge);
+
+				info = new DeveloperDTO(loginId, loginPw);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -118,12 +114,10 @@ public class DeveloperDAO {
 			while (rs.next()) {
 
 				String Id = rs.getString(1);
-
 				String Pw = rs.getString(2);
-				String Name = rs.getString(3);
-				int Age = rs.getInt(4);
 
-				DeveloperDTO dto = new DeveloperDTO(Id, Pw, Name, Age);
+
+				DeveloperDTO dto = new DeveloperDTO(Id, Pw);
 
 				list.add(dto);
 
@@ -174,13 +168,11 @@ public class DeveloperDAO {
 		connection();
 		int cnt = 0;
 
-		String sql = " UPDATE MEMBER SET PW = ? , NAME = ?,  AGE = ? WHERE ID = ? ";
+		String sql = " UPDATE MEMBER SET PW = ? WHERE ID = ? ";
 
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getPw());
-			psmt.setString(2, dto.getName());
-			psmt.setInt(3, dto.getAge());
 			psmt.setString(4, dto.getId());
 
 			cnt = psmt.executeUpdate();
