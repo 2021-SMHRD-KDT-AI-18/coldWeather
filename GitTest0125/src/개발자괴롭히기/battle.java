@@ -21,6 +21,7 @@ public class battle {
 
 		return attack;
 	}
+	
 
 }
 
