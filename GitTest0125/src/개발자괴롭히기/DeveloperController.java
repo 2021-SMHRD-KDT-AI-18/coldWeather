@@ -15,8 +15,8 @@ public class DeveloperController {
 		return dao.login(id, pw);
 	}
 
-	public ArrayList<DeveloperDTO> memberList() {
-		return dao.memberList();
+	public ArrayList<CharacterDTO> CharacterList() {
+		return cdao.CharacterList();
 
 	}
 
@@ -29,14 +29,9 @@ public class DeveloperController {
 		return dao.update(dto);
 	}
 
-	public int inputName(CharacterDTO cdto) {
-		return cdao.inputName(cdto);
+	public int inputStats(CharacterDTO cdto) {
 
-	}
-
-	public int getStat(CharacterDTO cdto) {
-
-		return cdao.inputName(cdto);
+		return cdao.inputStats(cdto);
 	}
 
 }

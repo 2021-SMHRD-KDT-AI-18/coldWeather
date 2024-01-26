@@ -159,10 +159,9 @@ public class DeveloperMainSystem {
 
 			else if (menu == 2) {
 				System.out.println("====랭킹 조회====");
-				ArrayList<DeveloperDTO> list = controller.memberList(); // 나중에 characterDTO로 변경
+				ArrayList<CharacterDTO> list = controller.CharacterList();// 나중에 characterDTO로 변경
 				for (int i = 0; i < list.size(); i++) {
-					System.out.print(list.get(i).getId() + "\t");
-					System.out.print(list.get(i).getPw() + "\t");
+					System.out.print(list.get(i).getName() + "\t");
 
 				}
 				System.out.println();
@@ -192,7 +191,7 @@ public class DeveloperMainSystem {
 
 			cdto = new CharacterDTO(name, health, intelligence, faithPower, magicPower, mentality);
 			// CharacterDTO 만들어지면 컨트롤러에 입력해서 받아오면 됨
-			int cnt = controller.getStat(cdto);
+			int cnt = controller.inputStats(cdto);
 
 			if (cnt > 0) {
 				System.out.println("분배가 완료되었습니다 게임을 시작합니다");
