@@ -9,12 +9,12 @@ public class CharacterDTO {
 		private int fp;
 		private int mp;
 		private int ment;
-		private String salary;
+		private int salary;
        
 		
 		// 생성자 메소드
 
-		public CharacterDTO(int name, int hp, int intell, int fp, int mp, int ment, String salary) {
+		public CharacterDTO(int name, int hp, int intell, int fp, int mp, int ment,0) {
 			super();
 			this.name = name;
 			this.hp = hp;
@@ -22,7 +22,7 @@ public class CharacterDTO {
 			this.fp = fp;
 			this.mp = mp;
 			this.ment = ment;
-			this.salary = salary;
+			this.salary = 0;
 		}
 
 		// getter 메소드
