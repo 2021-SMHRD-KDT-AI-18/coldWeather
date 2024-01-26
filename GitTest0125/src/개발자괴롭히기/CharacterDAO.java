@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class CharacterDAO {
 
@@ -85,14 +86,19 @@ public class CharacterDAO {
 			String db_url = "jdbc:oracle:thin@project-db-campus.smhrd.com:1524:xe";
 			String db_id = "campus_23K_AI18_p1_4";
 			String db_pw = "smhrd4";
+			conn = DriverManager.getConnection(db_url, db_id, db_pw);
 			
-			try {
-				conn = DriverManager.getConnection(db_url, db_id, db_pw);
-			} catch (Exception e) {
-				e.printStackTrace();
+			if(conn != null) {
+				
+			} else {
+				System.out.println("Connection 연결 실패");
 			}
 			
-		} catch (ClassNotFoundException e) {
+		}catch(ClassNotFoundException e) {
+				
+				e.printStackTrace();
+			}
+			 catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
