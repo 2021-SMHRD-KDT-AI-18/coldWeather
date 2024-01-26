@@ -10,7 +10,7 @@ public class CharacterCreate {
 
 		 // 캐릭터 이름 입력 받기
         System.out.println("캐릭터 이름을 입력하세요:");
-        String characterName = scanner.nextLine();
+        String Name = scanner.nextLine();
 
         // 능력치 입력 받기
         System.out.println("능력치를 배분하세요.(전체 총합이 100이 되어야 합니다)");
@@ -24,7 +24,7 @@ public class CharacterCreate {
 
         // 데이터베이스에 연결하고 캐릭터 정보 저장 (이 부분은 데이터베이스 대신에 출력으로 대체)
         System.out.println("캐릭터 정보:");
-        System.out.println("이름: " + characterName);
+        System.out.println("이름: " + Name);
         System.out.println("체력: " + health);
         System.out.println("지능: " + intelligence);
         System.out.println("신앙력: " + faithPower);
