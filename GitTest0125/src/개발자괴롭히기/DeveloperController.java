@@ -28,10 +28,7 @@ public class DeveloperController {
 		return dao.update(dto);
 	}
 
-	public ArrayList<CharcterDTO> memberlist() {
-		
-		return null;
 	}
 
 
-}
+
