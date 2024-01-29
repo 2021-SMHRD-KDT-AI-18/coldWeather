@@ -16,7 +16,6 @@ public class CharacterDAO {
 
 	// 이름, 스탯 입력 getName, getStats
 
-
 	public int inputStats(CharacterDTO cdto) {
 		String name = cdto.getName();
 		int hp = cdto.getHp();
@@ -77,23 +76,23 @@ public class CharacterDAO {
 		return list;
 
 	}
-	
+
 	public int delete(String character) {
-		
+
 		int cnt = 0;
-		
+
 		try {
 			connection();
-			String sql = "DELETE FROM MEMBER WHERE CHARACTER = ?";
+			String sql = "DELETE FROM CHARACTER WHERE CHARACTER = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, character);
 			cnt = psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close();
 		}
-		return cnt;	
+		return cnt;
 	}
 
 	private void close() {
