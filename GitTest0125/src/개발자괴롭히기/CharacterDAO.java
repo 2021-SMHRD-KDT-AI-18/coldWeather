@@ -47,13 +47,15 @@ public class CharacterDAO {
 		return cnt;
 	}
 
+	
+//	캐릭터 랭킹 기능
 	public ArrayList<CharacterDTO> CharacterList() {
 
 		ArrayList<CharacterDTO> list = new ArrayList<CharacterDTO>();
 
 		try {
 			connection();
-			String sql = " select * from character order by salary";// 샐러리 구현 할 것
+			String sql = " select * from character order by salary";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			while (rs.next()) {
@@ -77,15 +79,16 @@ public class CharacterDAO {
 
 	}
 
-	public int delete(String character) {
+//	캐릭터 삭제기능
+	public int delete(String name) {
 
 		int cnt = 0;
 
 		try {
 			connection();
-			String sql = "DELETE FROM CHARACTER WHERE CHARACTER = ?";
+			String sql = "DELETE FROM CHARACTER WHERE NICKNAME = ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, character);
+			psmt.setString(1, name);
 			cnt = psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -94,7 +97,7 @@ public class CharacterDAO {
 		}
 		return cnt;
 	}
-
+	
 	private void close() {
 
 		try {
