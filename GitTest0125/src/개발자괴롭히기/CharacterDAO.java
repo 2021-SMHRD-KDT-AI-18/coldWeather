@@ -77,15 +77,16 @@ public class CharacterDAO {
 
 	}
 
-	public int delete(String character) {
+	public int cdelete(CharacterDTO cdto) {
 
 		int cnt = 0;
+		String NAME = cdto.getName();
 
 		try {
 			connection();
-			String sql = "DELETE FROM CHARACTER WHERE CHARACTER = ?";
+			String sql = "DELETE FROM character WHERE NICKNAME = ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, character);
+			psmt.setString(1, NAME);
 			cnt = psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

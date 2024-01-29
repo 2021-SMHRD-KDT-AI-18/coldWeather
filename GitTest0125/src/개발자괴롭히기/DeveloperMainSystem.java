@@ -186,9 +186,9 @@ public class DeveloperMainSystem {
 			// 3 . 캐릭터 삭제
 			else if(menu ==3 ) {
 				System.out.println("====캐릭터 삭제=====");
-				System.out.print("삭제할 아이디를 입력해주세요 : ");
-				String id=sc.next();
-				int cnt = controller.cdelete(id);
+				System.out.print("삭제할 닉네임을 입력해주세요 : ");
+				String NICKNAME = sc.next();
+				int cnt = controller.delete(NICKNAME);
 			
 				if (cnt > 0) {
 					System.out.println("삭제 성공");
