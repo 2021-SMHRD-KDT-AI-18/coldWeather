@@ -32,8 +32,5 @@ public class DeveloperController {
 		return cdao.inputStats(cdto);
 	}
 
-	public int cdelete(CharacterDAO NICKNAME) {
-		return cdao.cdelete();
-	}
 
 }
