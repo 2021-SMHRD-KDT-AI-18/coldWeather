@@ -53,7 +53,7 @@ public class CharacterDAO {
 
 		try {
 			connection();
-			String sql = " select * from character order by salary";// 샐러리 구현 할 것
+			String sql = " select NICKNAME from character order by salary DESC";// 샐러리 구현 할 것
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			while (rs.next()) {
