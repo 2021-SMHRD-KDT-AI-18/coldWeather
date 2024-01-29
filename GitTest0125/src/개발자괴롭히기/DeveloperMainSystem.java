@@ -176,10 +176,8 @@ public class DeveloperMainSystem {
 			else if (menu == 2) {
 				System.out.println("====랭킹 조회====");
 				ArrayList<String> list = controller.CharacterList();// 나중에 characterDTO로 변경
-				System.out.println(list.size());
-				System.out.println(list.get(1));
 				for (int i = 0; i < list.size(); i++) {
-					System.out.print((i+1) +"위>>" + list.get(i) + "\t");
+					System.out.print((i+1) +"위>>" + list.get(i)+"\t");
 
 				}
 				System.out.println();
