@@ -66,6 +66,7 @@ public class CharacterDAO {
 
 				list.add(Name);
 
+				
 			}
 		}
 
@@ -79,9 +80,13 @@ public class CharacterDAO {
 		return list;
 
 	}
+	
+	
+	
+	
 
-//	캐릭터 삭제기능
-	public int delete(String name) {
+	// 캐릭터 삭제기능
+	public int cDelete(String name) {
 
 		int cnt = 0;
 
@@ -91,12 +96,11 @@ public class CharacterDAO {
 			String sql = "DELETE FROM CHARACTER WHERE NICKNAME = ?";
 
 			psmt = conn.prepareStatement(sql);
-
 			psmt.setString(1, name);
-
 			cnt = psmt.executeUpdate();
+			conn.commit(); // 추가: 변경사항 커밋
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(); // 예외 상세 정보 출력
 		} finally {
 			close();
 		}

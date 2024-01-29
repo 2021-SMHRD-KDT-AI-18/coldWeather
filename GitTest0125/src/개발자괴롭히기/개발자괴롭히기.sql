@@ -1,3 +1,3 @@
 SELECT * FROM member;
-SELECT name FROM 회원;
 select * from character;
+delete from character where nickname = '20';
