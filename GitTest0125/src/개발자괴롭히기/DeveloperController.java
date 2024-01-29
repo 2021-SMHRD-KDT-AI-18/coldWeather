@@ -38,4 +38,7 @@ public class DeveloperController {
 	public ArrayList<Integer> salaryList(){
 		return cdao.salaryList();
 	}
+
+
+	
 }

@@ -197,11 +197,16 @@ public class DeveloperMainSystem {
 				System.out.println("====랭킹 조회====");
 
 				ArrayList<String> list = controller.CharacterList();// 나중에 characterDTO로 변경
+				ArrayList<Integer> salarylist = controller.salaryList();
 
-				System.out.println("닉네임\t 연봉");
+				System.out.println("닉네임\t연봉");
 				for (int i = 0; i < list.size(); i++) {
 					System.out.print(list.get(i) + "\t");
 				}
+				for (int i = 0; i < salarylist.size(); i++) {
+					System.out.print(salarylist.get(i)*100 + "만원\t");
+				}
+
 				System.out.println();
 				System.out.println();
 			}
