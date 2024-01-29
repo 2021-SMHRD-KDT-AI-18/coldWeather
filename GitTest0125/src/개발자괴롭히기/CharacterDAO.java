@@ -66,6 +66,7 @@ public class CharacterDAO {
 
 				list.add(Name);
 
+				
 			}
 		}
 
@@ -79,6 +80,10 @@ public class CharacterDAO {
 		return list;
 
 	}
+	
+	
+	
+	
 
 	// 캐릭터 삭제기능
 	public int cDelete(String name) {
