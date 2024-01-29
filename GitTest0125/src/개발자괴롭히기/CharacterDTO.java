@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Random;
+import java.util.Scanner;
 
 public class CharacterDTO {
 
@@ -137,6 +138,18 @@ public class CharacterDTO {
 	public int defend() {
 		int defensePower = 50 + this.fp * 2;
 		return defensePower;
+	}
+
+	public static int getStatInput(Scanner sc, String statName, int statTotal) {
+		System.out.println("남은 스탯 포인트: " + statTotal);
+		System.out.print(statName + "을 입력하세요: ");
+		int stat = sc.nextInt();
+		while (stat > statTotal) {
+			System.out.print("스탯 포인트가 부족합니다. 다시 입력하세요: ");
+			stat = sc.nextInt();
+		}
+		statTotal -= stat;
+		return stat;
 	}
 
 }
