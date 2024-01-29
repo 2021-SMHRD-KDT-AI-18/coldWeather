@@ -13,6 +13,8 @@ import oracle.net.aso.s;
 
 public class DeveloperMainSystem {
 
+	private static final Scanner Scanner = null;
+
 	public static void main(String[] args) {
 
 		// MVC Pattern (Design Pattern 일종 )
@@ -219,6 +221,25 @@ public class DeveloperMainSystem {
 			}
 
 		}
+
+		System.out.print("난이도를 선택하세요 (1: 쉬움, 2: 중간, 3: 어려움): ");
+		int difficulty = sc.nextInt();
+		int statTotal = 0;
+		switch (difficulty) {
+		case 1:
+			statTotal = 120;
+			break;
+		case 2:
+			statTotal = 100;
+			break;
+		case 3:
+			statTotal = 80;
+			break;
+		case 9:
+			statTotal = 5000;
+			break;
+		}
+
 		// 캐릭터 생성 및 능력치 분배
 
 		System.out.println("캐릭터를 생성합니다.");
@@ -226,18 +247,18 @@ public class DeveloperMainSystem {
 		String name = sc.next();
 		System.out.println("능력치를 분배해주세요");
 		System.out.println("1.체력 2.지능 3.신앙력 4.마력 5.정신력");
-		System.out.print("체력 : ");
-		int health = sc.nextInt();
-		System.out.print("지능 : ");
-		int intelligence = sc.nextInt();
-		System.out.print("신앙력 : ");
-		int faithPower = sc.nextInt();
-		System.out.print("마력 : ");
-		int magicPower = sc.nextInt();
-		System.out.print("정신력 : ");
-		int mentality = sc.nextInt();
+		int health = 50 + CharacterDTO.getStatInput(sc, "체력", statTotal);
+		statTotal -= (health - 50);
+		int intelligence = CharacterDTO.getStatInput(sc, "지능", statTotal);
+		statTotal -= intelligence;
+		int faithPower = CharacterDTO.getStatInput(sc, "신앙력", statTotal);
+		statTotal -= faithPower;
+		int magicPower = CharacterDTO.getStatInput(sc, "마력", statTotal);
+		statTotal -= faithPower;
+		int mentality = CharacterDTO.getStatInput(sc, "정신력", statTotal);
+		statTotal -= mentality;
 		int salary = 0;
-		
+
 		player = new CharacterDTO(name, health, intelligence, faithPower, magicPower, mentality, salary);
 		// CharacterDTO 만들어지면 컨트롤러에 입력해서 받아오면 됨
 
