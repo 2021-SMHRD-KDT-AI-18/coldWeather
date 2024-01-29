@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 import oracle.net.aso.s;
@@ -25,7 +26,8 @@ public class DeveloperMainSystem {
 		// 모든 기능에서 사용할 수 있도록 전역변수 dto, dao 생성
 
 		DeveloperDTO dto = null;
-		CharacterDTO cdto = null;
+		CharacterDTO player = null;
+		CharacterDTO enemy = null;
 
 		while (true) {
 			// CRUD (create / read / update / delete)
@@ -221,9 +223,9 @@ public class DeveloperMainSystem {
 			int mentality = sc.nextInt();
 			int salary = 0;
 
-			cdto = new CharacterDTO(name, health, intelligence, faithPower, magicPower, mentality, salary);
+			player = new CharacterDTO(name, health, intelligence, faithPower, magicPower, mentality, salary);
 			// CharacterDTO 만들어지면 컨트롤러에 입력해서 받아오면 됨
-			int cnt = controller.inputStats(cdto);
+			int cnt = controller.inputStats(player);
 
 			if (cnt > 0) {
 				System.out.println("분배가 완료되었습니다 게임을 시작합니다");
@@ -231,9 +233,103 @@ public class DeveloperMainSystem {
 			} else {
 				System.out.println("능력치 분배 실패");
 			}
+		}
+		// 배틀 시스템
 
+		// 적의 스텟 설정
+		for (int level = 1; level <= 3 && player.getHp() > 0; level++) {
+			System.out.println("\nLevel " + level + " 적이 등장했습니다."); // 상대 스텟 분배
+			if (level == 1) {
+				int hp = 300;
+				int intell = 40;
+				int fp = 40;
+				int mp = 40;
+				int ment = 40;
+				enemy = new CharacterDTO("pbk mk1", level, hp, intell, fp, mp, ment);
+			} else if (level == 2) {
+				int hp = 450;
+				int intell = 55;
+				int fp = 20;
+				int mp = 55;
+				int ment = 30;
+				enemy = new CharacterDTO("pbk mk2", level, hp, intell, fp, mp, ment);
+			} else if (level == 3) {
+				int hp = 500;
+				int intell = 60;
+				int fp = 20;
+				int mp = 60;
+				int ment = 45;
+				enemy = new CharacterDTO("pbk mk3", level, hp, intell, fp, mp, ment);
+			}
+			// 적의 공격행동 설정
+			while (player.getHp() > 0 && enemy.getHp() > 0) {
+				Random rand = new Random();
+				int enemyAttackType = rand.nextInt(3) + 1;
+				int playerAttack = 0;
+				int enemyAttack = 0;
+				if (enemyAttackType == 1) {
+					enemyAttack = enemy.normalAttack();
+					if (enemyAttack > 0) {
+						System.out.println(enemy.getName() + "가 일반 공격을 할 것 같습니다. 예상 수치: " + Math.abs(enemyAttack));
+					} else {
+						System.out.println("상대 공격을 피할 수 있을것 같습니다.");
+					}
+				} else if (enemyAttackType == 2) {
+					enemyAttack = enemy.specialAttack();
+					if (enemyAttack > 0) {
+						System.out.println(enemy.getName() + "가 특수 공격을 할 것 같습니다. 예상 수치: " + Math.abs(enemyAttack));
+					} else {
+						System.out.println("상대 공격을 피할 수 있을것 같습니다.");
+					}
+
+				} else if (enemyAttackType == 3) {
+					enemy.setHp(enemy.getHp() + enemy.defend());
+					System.out
+							.println(enemy.getName() + "가 방어를 시전하여 " + enemy.defend() + " 만큼 충격을 상쇄하고 남은 수치만큼 회복 합니다.");
+				}
+				// 플레이어의 공격 선택
+				System.out.print("\n1. 일반 공격 2. 특수 공격 3. 방어 선택: ");
+				int actionChoice = sc.nextInt();
+				if (actionChoice == 1) {
+					playerAttack = player.normalAttack();
+					if (playerAttack > 0) {
+						System.out.println(player.getName() + "가 일반 공격을 하여 " + playerAttack + "데미지를 입혔습니다.");
+					} else {
+						System.out.println("공격이 빗나갔습니다.");
+					}
+				} else if (actionChoice == 2) {
+					playerAttack = player.specialAttack();
+					if (playerAttack > 0) {
+						System.out.println(player.getName() + "가 특수 공격을 하여 " + playerAttack + "데미지를 입혔습니다.");
+					} else {
+						System.out.println("공격이 빗나갔습니다.");
+					}
+				} else if (actionChoice == 3) {
+					enemy.setHp(enemy.getHp() + player.defend());
+					System.out.println(
+							player.getName() + "가 방어를 시전하여 " + player.defend() + " 만큼 충격을 상쇄하고 남은 수치만큼 회복 합니다.");
+				}
+				// 플레이어의 공격
+				enemy.setHp(enemy.getHp() - playerAttack);
+				if (enemy.getHp() <= 0) {
+					System.out.println("\n" + enemy.getName() + "가 패배하였습니다. " + enemy.getHp());
+					break;
+				}
+				// 적의 공격
+				player.setHp(player.getHp() - enemyAttack);
+				if (player.getHp() <= 0) {
+					System.out.println("\n" + player.getName() + "가 패배하였습니다. " + player.getHp());
+					break;
+				}
+				// 남은 체력 출력
+				System.out.println("\n" + player.getName() + "의 체력: " + player.getHp() + ", " + enemy.getName()
+						+ "의 체력: " + enemy.getHp());
+			}
+			// 승리
+			if (player.getHp() > 0) {
+				System.out.println("\n축하합니다! 모든 적을 이기고 게임에서 승리하였습니다!");
+			}
 		}
 	}
 }
-
 // 배틀 시스템

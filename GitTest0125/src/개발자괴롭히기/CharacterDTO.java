@@ -1,7 +1,16 @@
 package 개발자괴롭히기;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Random;
+
 public class CharacterDTO {
 
+	Random ran = new Random();
+	Connection conn = null;
+	PreparedStatement psmt = null;
+	ResultSet rs = null;
 	// 필드
 	private String name;
 	private int hp;
@@ -68,8 +77,66 @@ public class CharacterDTO {
 		return salary;
 	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public void setHp(int hp) {
 		this.hp = hp;
+	}
+
+	public void setIntell(int intell) {
+		this.intell = intell;
+	}
+
+	public void setFp(int fp) {
+		this.fp = fp;
+	}
+
+	public void setMp(int mp) {
+		this.mp = mp;
+	}
+
+	public void setMent(int ment) {
+		this.ment = ment;
+	}
+
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+
+	public int normalAttack() {
+		Random rand = new Random();
+		int damage = this.intell + rand.nextInt(100) + 1;
+		int miss = rand.nextInt(100) + 1;
+		boolean isCritical = (rand.nextInt(100) < (10 + this.ment * 2));
+		if (isCritical) {
+			damage *= 1 * (1 + 0.05 * this.ment);
+			System.out.println(this.name + "의 일반 공격에 치명타가 발동되었습니다!");
+		} else if (miss < 20) {
+			damage = 0;
+
+		}
+		return damage;
+	}
+
+	public int specialAttack() {
+		Random rand = new Random();
+		int damage = 30 + this.mp * 2;
+		boolean isCritical = (rand.nextInt(100) < (10 + this.ment * 2));
+		int miss = rand.nextInt(100) + 1;
+		if (isCritical) {
+			damage *= 1 * (1 + 0.05 * this.ment);
+			System.out.println(this.name + "의 특수 공격에 치명타가 발동되었습니다!");
+		} else if (miss < 20) {
+			damage = 0;
+		}
+		return damage;
+	}
+
+	public int defend() {
+		int defensePower = 50 + this.fp * 2;
+		return defensePower;
 	}
 
 }
