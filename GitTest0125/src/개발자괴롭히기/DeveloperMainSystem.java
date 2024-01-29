@@ -144,14 +144,13 @@ public class DeveloperMainSystem {
 					System.out.println("정확한 정보를 입력해주세요.");
 
 				}
-			}
-			else if(menu==3) {
-				
+			} else if (menu == 3) {
+
 				System.out.println("====회원탈퇴====");
 				System.out.print("삭제할 아이디를 입력해주세요 : ");
-				String id=sc.next();
+				String id = sc.next();
 				int cnt = controller.delete(id);
-			
+
 				if (cnt > 0) {
 					System.out.println("탈퇴성공");
 				} else {
@@ -175,21 +174,23 @@ public class DeveloperMainSystem {
 
 			else if (menu == 2) {
 				System.out.println("====랭킹 조회====");
-				ArrayList<CharacterDTO> list = controller.CharacterList();// 나중에 characterDTO로 변경
-				for (int i = 0; i < list.size(); i++) {
-					System.out.print((i+1) +"위>>" + list.get(i).getName() + "\t");
 
+				ArrayList<String> list = controller.CharacterList();// 나중에 characterDTO로 변경
+
+				System.out.println("닉네임\t 연봉");
+				for (int i = 0; i < list.size(); i++) {
+					System.out.print(list.get(i) + "\t");
 				}
 				System.out.println();
 				System.out.println();
 			}
 			// 3 . 캐릭터 삭제
-			else if(menu ==3 ) {
+			else if (menu == 3) {
 				System.out.println("====캐릭터 삭제=====");
-				System.out.print("삭제할 아이디를 입력해주세요 : ");
-				String id=sc.next();
-				int cnt = controller.cdelete(id);
-			
+				System.out.print("삭제할 닉네임을 입력해주세요 : ");
+				String name = sc.next();
+				int cnt = controller.cDelete(name);
+
 				if (cnt > 0) {
 					System.out.println("삭제 성공");
 				} else {
@@ -197,8 +198,6 @@ public class DeveloperMainSystem {
 
 				}
 			}
-				
-			
 
 		}
 		// 캐릭터 생성 및 능력치 분배
@@ -236,5 +235,5 @@ public class DeveloperMainSystem {
 		}
 	}
 }
-		
- 		//배틀 시스템
+
+// 배틀 시스템

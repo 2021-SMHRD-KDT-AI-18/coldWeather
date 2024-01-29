@@ -15,7 +15,7 @@ public class DeveloperController {
 		return dao.login(id, pw);
 	}
 
-	public ArrayList<CharacterDTO> CharacterList() {
+	public ArrayList<String> CharacterList() {
 		return cdao.CharacterList();
 
 	}
@@ -23,17 +23,15 @@ public class DeveloperController {
 	public int delete(String id) {
 		return dao.delete(id);
 	}
-	
-	
-
 
 	public int inputStats(CharacterDTO cdto) {
 
 		return cdao.inputStats(cdto);
 	}
 
-	public int cdelete(String id) {
-		return cdao.delete(id);
+	public int cDelete(String name) {
+
+		return cdao.cDelete(name);
 	}
 
 }
