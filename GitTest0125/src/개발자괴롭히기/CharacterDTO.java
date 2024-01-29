@@ -109,7 +109,7 @@ public class CharacterDTO {
 
 	public int normalAttack() {
 		Random rand = new Random();
-		int damage = this.intell + rand.nextInt(100) + 1;
+		int damage = this.intell + rand.nextInt(50) + 1;
 		int miss = rand.nextInt(100) + 1;
 		boolean isCritical = (rand.nextInt(100) < (10 + this.ment * 2));
 		if (isCritical) {
@@ -118,6 +118,7 @@ public class CharacterDTO {
 		} else if (miss < 20) {
 			damage = 0;
 
+			System.out.println();
 		}
 		return damage;
 	}
