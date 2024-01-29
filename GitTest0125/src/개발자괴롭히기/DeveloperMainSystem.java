@@ -33,6 +33,7 @@ public class DeveloperMainSystem {
 		String id = "0";
 
 		while (true) {
+
 			// CRUD (create / read / update / delete)
 			System.out.print("\r\n"
 					+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣶⡄⠀⠀⠀⣠⣤⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
@@ -126,7 +127,7 @@ public class DeveloperMainSystem {
 				int cnt = controller.join(dto);
 
 				if (cnt > 0) {
-					System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⢀⢀⢄⢆⢆⢇⢇⢇⢇⢇⢖⢔⢄⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "⠀⠀⠀⠀⠀⢀⢠⢢⢣⢣⢣⢣⢣⢣⢣⢣⢣⢣⢣⢣⢣⢣⢣⠣⡄⡀⠀⠀⠀⠀⠀\r\n"
+					System.out.println("⠀⢀⢀⢄⢆⢆⢇⢇⢇⢇⢇⢖⢔⢄⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "⠀⠀⠀  ⢀⢠⢢⢣⢣⢣⢣⢣⢣⢣⢣⢣⢣⢣⢣⢣⢣⢣⠣⡄⡀⠀⠀⠀⠀⠀\r\n"
 							+ "⠀⠀⠀⢀⢰⢸⢸⢸⢸⢸⢸⢸⢸⢸⢸⢸⢸⠸⡸⡸⡘⡜⡜⡜⡜⡜⡄⡀⠀⠀⠀\r\n" + "⠀⠀⢀⢎⢎⢎⢎⢎⢎⢎⢎⢎⢎⢎⢎⢎⢲⢩⢪⢪⢪⢪⢪⢪⢪⢪⢪⢒⠄⠀⠀\r\n"
 							+ "⠀⢠⢣⢣⢣⢣⢣⢣⢣⢣⢣⠣⡣⡣⡱⡱⡱⡱⡱⡱⡱⡱⡱⠑⡱⡱⡱⡱⢍⠆⠀\r\n" + "⠠⡱⡱⡱⡱⡱⡑⡕⡕⢕⢕⢕⢕⢕⢕⢕⢕⢕⢕⢕⢕⠅⢀⢔⢜⢜⢜⢜⢜⢜⠄\r\n"
 							+ "⡸⡸⡸⡸⡸⡸⡸⡸⡸⡸⡸⡸⡸⡸⡸⡸⡸⡸⡸⠘⠀⡰⡸⡸⡸⡸⡸⡸⡸⡸⢄\r\n" + "⢜⢜⢜⢜⢜⢌⢎⠎⢎⢎⢎⢎⢎⢎⢎⢎⢎⠎⠂⢠⢪⢪⠪⡪⡪⡪⡪⡪⡪⡪⡪\r\n"
@@ -136,7 +137,7 @@ public class DeveloperMainSystem {
 							+ "⠀⠀⠀⠀⠀⠀⠑⠕⡕⡕⡕⡕⡕⡪⡱⡱⡱⡱⡱⡸⡸⡸⡸⡸⠘⠀⠀⠀⠀⠀⠀\r\n" + "⠀⠀⠀⠀⠀⠀⠀⠀⠈⠈⠊⠎⠎⡎⡎⡎⡎⡎⠎⠎⠊⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀");
 					System.out.println("회원 등록 성공");
 				} else {
-					System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⢀⢀⡄⡆⡖⣜⢜⢜⢜⣒⢖⢔⢄⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "⠀⠀⠀⠀⠀⢀⢠⢢⡣⣣⢣⢳⢱⡱⡱⡹⡸⡸⡸⡸⡪⡪⡣⡣⡄⡀⠀⠀⠀⠀⠀\r\n"
+					System.out.println("⠀⢀⢀⡄⡆⡖⣜⢜⢜⢜⣒⢖⢔⢄⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n" + "⠀⠀⠀⠀⠀⢀⢠⢢⡣⣣⢣⢳⢱⡱⡱⡹⡸⡸⡸⡸⡪⡪⡣⡣⡄⡀⠀⠀⠀⠀⠀\r\n"
 							+ "⠀⠀⠀⢀⢰⢸⡸⡱⡱⡱⡱⡕⣕⢕⢝⢜⢕⢝⢜⢎⢮⢺⢸⢪⢪⡪⡢⠀⠀⠀⠀\r\n" + "⠀⠀⢀⢎⢎⢇⢇⢧⢓⢝⢜⢜⡜⡜⡎⡇⡧⡳⡱⡕⣕⢕⡕⡵⡱⡱⡍⡧⡀⠀⠀\r\n"
 							+ "⠀⢠⢣⢳⢱⢕⢵⢱⢕⢝⠜⡕⡕⣕⢵⢱⡱⡱⣱⢱⠱⡱⡱⡱⡕⡵⡱⡱⡍⡆⠀\r\n" + "⢀⢇⢧⢳⢱⡱⡕⡕⣕⠅⠀⠀⠑⢕⢕⢕⢕⢝⠌⠀⠀⢘⢜⢕⢕⢕⢵⢱⢕⢕⠄\r\n"
 							+ "⢔⢕⡕⣕⢕⢕⢕⢝⢔⢝⢤⠀⠀⠈⠘⡕⠕⠁⠀⢀⢔⢝⢜⢕⢝⢜⢼⢸⢜⡪⡅\r\n" + "⢇⢧⢣⢣⡣⡳⡱⡣⡫⡪⡪⡣⣅⡀⠀⠀⠀⢀⢔⢕⢕⢕⢇⢗⢕⢇⢧⢣⢣⢣⢣\r\n"
@@ -180,9 +181,11 @@ public class DeveloperMainSystem {
 
 				}
 			}
+
 		}
 
 		while (true) {
+
 			System.out.println("=======1.게임시작======");
 			System.out.println("=======2.랭킹확인======");
 			System.out.println("=======3.캐릭터 삭제======");
@@ -274,8 +277,46 @@ public class DeveloperMainSystem {
 		// 배틀 시스템
 
 		// 적의 스텟 설정
+
 		for (int level = 1; level <= 3 && player.getHp() > 0; level++) {
+			System.out.println("\n"
+					+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀ ⠀⠀ ⠀⠀⠀⡀⣄⣄⡀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+					+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀ ⠀⢀⡰⡙⡎⠊⠊⠙⠪⠣⣢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+					+ "⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⣆⠇⡎⠂⠀⠀⠀⠌⠀⠘⡆⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀\n"
+					+ "⠀⠄⠀⠠⠀⠀⠄⠀⠠⠀⠀⠄⠀⠠⠀⠀⠄⠀⠠⠀⠀⠄⠀⠠⠀⠀⠄⠀⠠⠀⠀⠄⠀⠠⠀⠀⠄⠀⠠⠀⠀⠄⠀⠠⠀⠀⠄⠀⠠⠀⠀⠄⠀⠠⠀⠀⠄⠀⠠⠀⠀⠄⠀⠠⠀⠀⠄⠀⠠⠀⠀⠄⠀⣷⢝⣎⠦⠉⠉⠉⠖⠢⣰⠁⠀⠐⠀⠀⠠⠀⠀⠄⠀⠠⠀⠀⠄⠀⠠⠀\n"
+					+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   ⠀⠀⠀⠀⠀⣤⢛⠹⠳⡳⢆⣆⣔⡄⡀⡈⡦⠀⠀⠠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+					+ "⠀⠈⠀⠀⠁⢐⣬⣴⠀⠁⠀⠈⠀⠀⠁⠀⢈⡠⣀⠁⠀⢈⣠⡀⠁⠀⠈⣠⡀⠁⠀⢈⣠⡀⠁⠀⢈⣠⡀⠁⠀⠈⣠⣀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠁⠀⠉⠻⣔⣥⠈⢂⠅⡪⢣⠫⡛⠙⠀⠀⠀⠀⠀⡀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈\n"
+					+ "⠀⠀⢀⠀⠀⢐⣿⣿⠀⠀⠀⡀⠠⠀⠀⠰⣔⢩⢱⢱⢰⢜⠨⡪⣣⢄⡗⠡⡫⡪⡄⡎⡘⡜⣦⢐⠦⡑⡙⢦⠂⣎⠪⡸⣰⠀⠀⠀⠄⠀⠠⠀⠀⠄⠀⠠⠀⠀⠄⠀⠠⠀⠀⠄⠀⠀⠄⠀⢀⠀⠀⢀⢰⠑⣴⡸⡸⡴⡵⡁⠀⠀⢀⠀⠁⠀⠀⠀⠀⡀⠄⠀⠠⠀⠀⠄⠀⠠\n"
+					+ "⠀⠀⠀⠀⠀⢐⣿⣿⠀⠀⠁⠀⠀⠀⠀⠈⠱⣠⣂⠍⠈⠒⣅⡔⠊⠀⠓⣅⡔⠕⠁⢑⣄⡒⠍⠀⠓⣌⡌⠎⠀⠣⣡⣐⠁⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⢷⣣⠐⣂⢍⢝⣗⡼⣏⠪⣢⡀⠀⠀⠀⡀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+					+ "⠐⠈⠀⠀⠂⢐⣿⣿⠀⠠⠀⠀⠀⡀⠠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠂⡀⠇⣟⢮⢻⣻⣿⣿⣿⣝⢼⣌⢄⠺⣁⡀⠀⠀⠀⠀⠀⡀⠄⠂⠈⠀⠀⠁⠀\n"
+					+ "⠀⠀⠀⠀⠀⠐⣿⣿⣷⡄⠀⢀⠀⠀⠀⠀⠀⡀⠀⢀⠀⢀⠀⠠⠀⠂⠀⢀⠀⠄⠀⢀⠀⠀⡀⠀⡀⠀⡀⠀⠠⠀⠀⡀⠀⠄⠀⢀⠀⠀⣿⣶⣦⠠⠀⠀⠄⠀⠠⠀⠀⠄⠀⠠⠀⠄⠀⠀⠄⢰⠈⠀⢐⡽⣕⢽⢿⣿⣿⣗⢝⢷⡇⠀⠀⢱⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⢀⠠\n"
+					+ "⠀⠀⠀⠁⠀⠀⠘⠙⠙⠙⠑⠑⠊⠊⠃⠓⠑⠊⠚⠂⠃⠓⠘⠊⠊⠊⠚⠂⠃⠃⠓⠑⠊⠃⠊⠊⠒⠑⠊⠚⠘⠘⠊⠒⠑⠑⠑⠑⠊⠃⠛⠙⠙⠙⠑⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠈⣳⢣⢴⡯⣎⢗⣿⣿⣿⣿⠭⢫⣇⡢⠬⠂⠀⠀⢀⠀⠀⡀⠀⡀⠠⠀⠈⠀⠀\n"
+					+ "⠀⠀⠐⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠁⠀⠈⠀⠀⠁⠀⠈⠀⠀⠁   ⠀⠀⢠⡺⠀⣿⡏⡊⡓⡻⢛⣵⡿⡬⡾⣞⠊⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+					+ "⠈⠀⠀⠀⡀⠀⠀⠀⠂⠀⠠⠐⠀⠀⠂⠀⠐⠀⠀⠄⠂⠀⠀⠂⠀⠀⠂⠀⠀⠂⠀⠠⠀⠀⠂⠀⠐⠀⠀⠂⠀⠀⠂⠀⠀⠂⠀⠐⠀⠀⠂⠀⠐⠀⠈⠀⠀⠀⢀⠠⠀⠀⠄⠀⠠⠀⠀ ⡀⠀⠀⢸⣞⡶⣆⣽⡫⣏⢯⣽⠵⣝⢽⡞⠁⠀⠀⠀⢀⠀⠀⠀⠠⠀⠠⠀⠀⠠⠀⠈⠀\n"
+					+ "⠀⡀⠠⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⢀⠀⠠⠀⠀⠠⠀⠀⡀⠀⠀⠀⢀⠀⠀⡀⠀⢀⠀⠄⠀⠀⠄⠀⠀⡀⠀⢀⠀⠀⡀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠈⠳⣙⠬⢻⣝⢼⢵⢋⡯⡮⣫⡇⠀⠠⠀⠂⠀⠀⠀⠠⠀⠀⠀⠀⠀⠀⠀⠀⡀\n"
+					+ "⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠁⠀⠀⠈⠀⠀⠀⠀⠁⠀⠀⠈⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⡀⠄⠐⠀⠁⠀⠈⠀⠀⠀⠁⠀⠀⡀⠠⡪⡎⡎⣞⠂⣿⡪⡪⡇⠠⠀⠀⠀⠀⠀⠠⠀⠀⠀⠀⠂⠁⠀⠁⠀⠀\n"
+					+ "⢀⠀⠀⠠⠐⠀⠀⢀⠀⠁⠀⠀⠈⠀⠀⢀⠠⠀⠀⠄⠈⠀⠀⠀⡀⠄⠀⠀⠀⠀⠂⠀⠐⠀⠀⠀⠠⠀⠂⠀⠀⠄⠀⠈⠀⠀⠁⠀⠀⠂⠀⠐⠀⠀⠄⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⠁⠀⠀⡀⠀⢐⢯⡪⡪⡖⠀⢘⣞⣜⢵⠂⠀⠀⠠⠐⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⡀\n"
+					+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠠⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⡀⢀⢀⢐⢀⢀⠀⡀⠀⠀⠂⠀⠀⠀⠀⢀⠀⠀⡀⠄⠀⠠⠀⠀⠄⠀⠀⡀⠀⠀⠀⡀⠀⠀⡀⠀⠄⠀⠠⠀⠁⠀⠀⠀⠀⡀⠀⠀⠀⣹⢮⣷⠁⠀⠐⢳⣕⡟⠀⠀⢀⠀⠀⠀⠀⠀⠁⠀⠀⠠⠐⠈⠀⠀⠀\n"
+					+ "⡀⠀⠀⠁⠀⠀⠂⠀⠐⠀⠀⡀⠀⠀⠀⠀⠠⠀⠐⠀⠀⠈⣰⣜⢝⣮⣲⣲⣢⣂⡀⡡⢑⢖⢄⠀⠀⠠⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠁⠀⠀⠀⣮⡺⢗⣗⡏⠀⠨⣟⣦⡻⡆⡀⠀⠀⠀⠐⠈⠀⠀⠀⠂⠀⠀⠀⠀⠀⡀\n"
+					+ "⠀⠀⠀⠂⠀⠠⠀⠀⢀⠀⠀⠀⠀⠈⠀⠀⢀⠀⠀⠀⢄⡗⡗⣎⡷⣽⣿⣿⣿⣿⣿⣷⣧⢑⢅⠧⡄⠀⠀⠀⠀⠀⡀⠄⠀⠠⠐⠈⠀⠀⠁⠀⠐⠀⠀⠄⠀⠀⠐⠀⠀⠐⠀⠐⠀⠀⠁⠀⠀⠀⠀⡀⠀⠓⠵⠴⠑⠁⠀⠈⠘⠪⠦⠞⠐⠀⠀⠂⠀⠀⠀⠀⠄⠀⠀⡀⠄⠐⠀⠀\n"
+					+ "⠀⢀⠠⠀⠀⠀⠀⠀⠀⠀⠀⠐⠀⠀⠠⠀⠀⠀⠀⠠⣸⢝⢮⣪⣟⣾⣿⣿⣿⣿⣿⣿⣿⣎⠢⣣⡇⠀⠀⠠⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⡀⠀⠀⠀⠐⠀⠀⠠⠀⠀⠀⠀⡀⠀⢀⠀⠀⠁⠀⠀⠀⠀⠀⠀⢀⠠⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
+					+ "⠄⠀⠀⠀⠀⠈⠀⠀⠁⠀⠐⠀⠀⢀⠀⠀⠀⠐⠀⠐⡽⣪⡳⣗⢷⣿⣿⣿⣿⣿⣿⣿⣿⣇⠇⡿⣷⡆⠀⠀⠀⠀⠀⠀⠀⠄⠀⠄⠐⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⢀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⡀⠀⢀⠠⠀⠀⠂⠀⠀⠀⠀⠐⠀⠀⠠⠀⠂⠁⠀⠀⠀⢀⠠⠀⠁⠀⠀⡀⠠⠀\n"
+					+ "⠀⠀⠀⠀⠐⠀⠀⠠⠀⠀⡀⠀⢀⠀⠀⠀⢁⣀⣄⣶⣿⣾⣾⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⢷⢱⢸⣾⠿⡄⠐⠀⠀⠂⠈⠀⠀⠀⠀⠀⠀⠀⠠⠐⠀⠀⠂⠀⠀⠄⠀⠀⠀⠈⠀⠀⠀⡀⠄⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠄⠀⠀⠠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀\n"
+					+ "⢀⠀⠀⠁⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠮⢞⢞⣿⣻⢿⡿⣿⢿⣟⡿⣵⡵⠛⡿⡫⠢⠑⡕⡅⠀⠀⠀⠀⡀⠀⠀⠀⠀⡀⠄⠀⠐⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⡀⠐⠀⠀⠐⠀⠀⠀⠀⠀⠀⢀⠠⠀⠀⠐⠈⠀⠀⠀⠀⠀⢀⠀⠀⠀⠠⠀⠐⠀⠁⠀⠀⠠⠀⠀⠀⠀⠀⡀\n"
+					+ "⠀⠀⠀⠠⠀⠂⠀⠀⠀⠂⠀⠐⠀⠀⠈⠀⠀⠀⠀⠈⠸⣻⣿⣾⣷⣿⣾⣿⣿⣗⠌⠂⠀⠁⠀⠣⡀⠀⠀⠀⠁⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⡀⠄⠂⠈⠀⠀⠀⠈⠀⠀⠀⠀⠀⡀⠀⠀⠀⡀⠀⠄⠀⠀⠀⠀⡀⠀⠀⠀⡀⠀⠄⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠠⠀⠀⠀⠐⠀⠀⠀\n"
+					+ "⠀⡀⠄⠀⠀⠀⠀⠀⢀⠀⠀⡀⠀⠠⠀⠀⠄⠐⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿⠝⡏⡆⡀⠀⠀⡀⡌⠂⠀⠀⠂⠀⠀⠀⠂⠀⠀⡀⠀⢀⠀⠁⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⡀⠠⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠁⠀⠀⠀⠀⢀⠀⠀⡀⠠⠐⠀⠀⠁⠀⠀⠀⠐⠀⠀⠠⠀\n"
+					+ "⠀⠀⠀⠀⠀⠄⠂⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢄⠗⠗⣌⣿⣿⠿⡹⢨⢊⢢⠱⡀⠠⡰⠁⢀⠀⠀⠄⠀⠀⠐⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠠⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⢀⠠⠐⠀⠀⠀⠀⠈⠀⠀⠀⡀⠠⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠄⠂⠀⠀⡀⠀⠀\n"
+					+ "⠂⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠠⠐⠀⠁⠀⢐⠰⠑⠀⠈⠊⡆⡾⡝⡂⠈⠢⢑⢬⡪⠙⠉⠀⠀⢀⠠⠀⠀⠀⠐⠀⠀⠀⠀⠀⠀⠐⠀⠀⠐⠀⠁⠀⠀⠀⠀⠀⠀⠀⠐⠀⠀⠠⠐⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠠⠀⠀⠀⠀⠀⠀⠂⠀⠀⡀⠄⠀⠀⣀⢀⠀⠀⠀⠀⠀⠀\n"
+					+ "⠀⠠⠀⠀⠀⠀⠂⠀⠀⠂⠁⠀⠀⠀⠀⠠⣜⢀⢀⠀⠠⢂⠐⠍⠳⣄⢀⠀⣶⡟⡏⣆⡔⠢⣔⣆⢉⠑⣂⠀⠀⡀⠀⠈⠀⠀⠂⠀⠀⠠⠀⠀⠀⠀⡀⠄⡰⠖⡖⡄⡀⡔⢖⢖⡄⡀⡰⢲⠲⡄⢀⢔⠖⡖⣄⠂⡠⡖⡖⣄⠀⡰⢲⢲⣀⠀⠠⠀⠀⠀⠀⠀⣿⣿⡃⠀⠐⠀⠀⠂\n"
+					+ "⠀⠀⠀⠀⠈⠀⠀⠀⠄⠀⠀⠀⠀⡀⢄⢗⢽⡹⣝⢾⢷⣱⣈⡂⢅⢐⠝⢦⣿⣿⢬⢲⢧⣄⢾⠩⡛⣦⠒⠀⠀⠀⠀⠀⠄⠀⠀⡀⠄⠀ ⢀⠀⠁⠀⠐⡇⠱⠘⢼⠸⡊⠢⠑⢜⠢⡏⢂⠣⢹⠸⡱⠘⠌⢺⠨⢗⠐⡑⠼⠅⡗⠌⢂⢻⠀⠀⠀⠀⢀⠀⠀⣿⣿⠅⠀⠀⠀⡀⠀\n"
+					+ "⠈⠀⠀⠁⠀⠀⠄⠀⠀⠀⡀⠈⠀⣐⢮⢕⢾⢹⢵⣳⢕⡕⡎⡻⡺⣢⡣⡱⣭⠿⠉⡈⢿⢼⣵⡋⠉⢾⣏⠀⠀⠀⠂⠀⠀⠀⡀⠀ ⠀⠀.⠀⠀⠀⠀⠀⠘⠖⠎⠁⠀⠘⠲⠚⠁⠀⠈⠲⠲⠁⠀⠈⠖⠎⠁⠀⠈⠲⠒⠉⠀⠐⠲⠊⠁⠀⠀⠐⠈⠀⠀⠀⣿⣿⠅⠀⠀⠄⠀⠀\n"
+					+ "⡀⠠⠀⠀⠠⠀⠀⠀⠀⠁⠀⢀⡔⢎⢇⢣⢣⢳⡱⣕⢗⡽⣸⢱⢱⢱⢙⢯⡳⢄⠄⣐⡜⠉⠉⠑⠔⢩⠪⡀⠀⢀⠀⢀⠀⠁  ⠀⠀⢠⣠⠈⠀⠀⠐⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠠⠀⠂⠀⠀⠀⠀⣀⣿⣿⠅⠀⢀⠀⠀⠀\n"
+					+ "⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⣢⠫⡢⡊⣆⢇⢗⢝⣜⡕⣟⣾⣮⡺⣜⢜⡞⡀⡀⢱⠣⡹⠵⢶⠐⠙⠑⠈⠁⠀⠀⠀⡴⢴⠾⡷ ⡿⡤⢦⠴⢴⠤⡦⡤⢦⠴⢴⠴⠴⠴⠴⠴⠴⡴⠴⠴⠴⠴⠴⠴⡴⢤⢥⢤⠦⢦⠥⠦⠦⢦⢥⠴⡤⢴⠤⡦⠦⡦⡿⢿⠟⠁⠀⠀⠀⠀⡀\n"
+					+ "⠀⠀⠄⠈⠀⠈⠀⠀⠠⠐⠀⠈⠈⠀⠁⠁⠀⠁⠉⠀⠉⠈⠉⠉⠁⠁⠉⠈⠈⠈⠁⠉⠉⠀⠀⠀⠀⠀⠀⠐⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⠂⠀⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀"
+					+ "");
+
 			System.out.println("\nLevel " + level + " 적이 코딩 승부를 걸어왔다"); // 상대 스텟 분배
+
 			if (level == 1) {
 				int hp = 150;
 				int intell = 10;
@@ -283,6 +324,7 @@ public class DeveloperMainSystem {
 				int mp = 15;
 				int ment = 15;
 				enemy = new CharacterDTO("pbk mk1", hp, intell, fp, mp, ment, 0);
+
 			} else if (level == 2) {
 				int hp = 200;
 				int intell = 40;
@@ -290,6 +332,7 @@ public class DeveloperMainSystem {
 				int mp = 200;
 				int ment = 30;
 				enemy = new CharacterDTO("pbk mk2", hp, intell, fp, mp, ment, 0);
+
 			} else if (level == 3) {
 				int hp = 250;
 				int intell = 20;
@@ -297,82 +340,88 @@ public class DeveloperMainSystem {
 				int mp = 30;
 				int ment = 20;
 				enemy = new CharacterDTO("pbk mk3", hp, intell, fp, mp, ment, 0);
+
 			}
 			// 적의 공격행동 설정
-			while (player.getHp() > 0 && enemy.getHp() > 0) {
-				Random rand = new Random();
-				int enemyAttackType = rand.nextInt(3) + 1;
-				int playerAttack = 0;
-				int enemyAttack = 0;
-				if (enemyAttackType == 1) {
-					enemyAttack = enemy.normalAttack();
-					if (enemyAttack > 0) {
-						System.out
-								.println(enemy.getName() + "(이)가 코딩테스트 공격을 할 것 같습니다. 예상 수치: " + Math.abs(enemyAttack));
-					} else {
-						System.out.println("상대 공격을 피할 수 있을것 같습니다.");
-					}
-				} else if (enemyAttackType == 2) {
-					enemyAttack = enemy.specialAttack();
-					if (enemyAttack > 0) {
-						System.out.println(
-								enemy.getName() + "(이)가 변수 이름 바꾸기 공격을 할 것 같습니다. 예상 수치: " + Math.abs(enemyAttack));
-					} else {
-						System.out.println("상대 공격을 피할 수 있을것 같습니다.");
-					}
-
-				} else if (enemyAttackType == 3) {
-					enemy.setHp(enemy.getHp() + enemy.defend());
-					System.out.println(enemy.getName() + "(이)가 챗GPT를 사용하여 " + enemy.defend() + " 만큼 코드를 복구합니다.");
-				}
-				// 플레이어의 공격 선택
-				System.out.print("\n1. 맥북 사기 2. 이직하기 3. 방어 선택: ");
-				int actionChoice = sc.nextInt();
-				if (actionChoice == 1) {
-					playerAttack = player.normalAttack();
-					if (playerAttack > 0) {
-						System.out.println(player.getName() + "(이)가 할부로 맥북을 구매하여 " + playerAttack + "데미지를 입혔습니다.");
-					} else {
-						System.out.println("공격이 빗나갔습니다.");
-					}
-				} else if (actionChoice == 2) {
-					playerAttack = player.specialAttack();
-					if (playerAttack > 0) {
-						System.out.println(player.getName() + "(이)가 이직을 성공하여 " + playerAttack + "데미지를 입혔습니다.");
-					} else {
-						System.out.println("공격이 빗나갔습니다.");
-					}
-				} else if (actionChoice == 3) {
-					enemy.setHp(enemy.getHp() + player.defend());
-					System.out.println(
-							player.getName() + "(이)가 디도스를 시전하여 " + player.defend() + " 만큼 충격을 상쇄하고 남은 수치만큼 행복해합니다.");
-				}
-
-				// 플레이어의 공격
-				enemy.setHp(enemy.getHp() - playerAttack);
-
-				System.out.print(enemy.getName() + "의 체력: " + enemy.getHp());
-
-				if (enemy.getHp() <= 0) {
-					System.out.println("\n" + enemy.getName() + "(이)가 패배하였습니다. ");
-
-					break;
-				}
-				// 적의 공격
-				player.setHp(player.getHp() - enemyAttack);
-				System.out.print("\t" + player.getName() + "의 체력: " + player.getHp() + "\n");
-				if (player.getHp() <= 0) {
-					System.out.println("\n" + player.getName() + "(이)가 패배하였습니다. ");
-					break;
-				}
-
-				// 남은 체력 출력
-
-			}
-			// 승리
 
 		}
+
+		while (player.getHp() > 0 && enemy.getHp() > 0) {
+
+			Random rand = new Random();
+			int enemyAttackType = rand.nextInt(3) + 1;
+			int playerAttack = 0;
+			int enemyAttack = 0;
+			if (enemyAttackType == 1) {
+				enemyAttack = enemy.normalAttack();
+				if (enemyAttack > 0) {
+					System.out.println(enemy.getName() + "(이)가 코딩테스트 공격을 할 것 같습니다. 예상 수치: " + Math.abs(enemyAttack));
+				} else {
+					System.out.println("상대 공격을 피할 수 있을것 같습니다.");
+				}
+			} else if (enemyAttackType == 2) {
+				enemyAttack = enemy.specialAttack();
+				if (enemyAttack > 0) {
+					System.out
+							.println(enemy.getName() + "(이)가 변수 이름 바꾸기 공격을 할 것 같습니다. 예상 수치: " + Math.abs(enemyAttack));
+				} else {
+					System.out.println("상대 공격을 피할 수 있을것 같습니다.");
+				}
+
+			} else if (enemyAttackType == 3) {
+				enemy.setHp(enemy.getHp() + enemy.defend());
+				System.out.println(enemy.getName() + "(이)가 챗GPT를 사용하여 " + enemy.defend() + " 만큼 코드를 복구합니다.");
+			}
+			// 플레이어의 공격 선택
+			System.out.print("\n1. 맥북 사기 2. 이직하기 3. 방어 선택: ");
+			int actionChoice = sc.nextInt();
+			if (actionChoice == 1) {
+				playerAttack = player.normalAttack();
+				if (playerAttack > 0) {
+					System.out.println(player.getName() + "(이)가 할부로 맥북을 구매하여 " + playerAttack + "데미지를 입혔습니다.");
+				} else {
+					System.out.println("공격이 빗나갔습니다.");
+				}
+			} else if (actionChoice == 2) {
+				playerAttack = player.specialAttack();
+				if (playerAttack > 0) {
+					System.out.println(player.getName() + "(이)가 이직을 성공하여 " + playerAttack + "데미지를 입혔습니다.");
+				} else {
+					System.out.println("공격이 빗나갔습니다.");
+				}
+			} else if (actionChoice == 3) {
+				enemy.setHp(enemy.getHp() + player.defend());
+				System.out.println(
+						player.getName() + "(이)가 디도스를 시전하여 " + player.defend() + " 만큼 충격을 상쇄하고 남은 수치만큼 행복해합니다.");
+			}
+
+			// 플레이어의 공격
+			enemy.setHp(enemy.getHp() - playerAttack);
+
+			System.out.print(enemy.getName() + "의 체력: " + enemy.getHp());
+
+			if (enemy.getHp() <= 0) {
+				System.out.println("\n" + enemy.getName() + "(이)가 패배하였습니다. ");
+				break;
+
+			}
+
+			// 적의 공격
+			player.setHp(player.getHp() - enemyAttack);
+			System.out.print("\t" + player.getName() + "의 체력: " + player.getHp() + "\n");
+
+			if (player.getHp() <= 0) {
+				System.out.println("\n" + player.getName() + "(이)가 패배하였습니다. ");
+				break;
+			}
+
+			// 남은 체력 출력
+
+		}
+		// 승리
+
 		if (player.getHp() > 0) {
+
 			System.out.println("\n축하합니다! 모든 적을 이기고 게임에서 승리하였습니다!");
 			System.out.println("랭킹에 등록합니다");
 			player.setSalary(player.getHp());
@@ -385,6 +434,6 @@ public class DeveloperMainSystem {
 				System.out.println("랭킹 등록에 실패했습니다");
 			}
 		}
+
 	}
 }
-// 배틀 시스템
