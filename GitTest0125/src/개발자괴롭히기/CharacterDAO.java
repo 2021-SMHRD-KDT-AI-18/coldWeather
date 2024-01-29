@@ -78,9 +78,9 @@ public class CharacterDAO {
 
 	}
 
-	public ArrayList<String> salaryList() {
+	public ArrayList<Integer> salaryList() {
 
-		ArrayList<String> salaryList = new ArrayList<String>();
+		ArrayList<Integer> salaryList = new ArrayList<Integer>();
 		CharacterDTO cdto = null;
 		try {
 			connection();
@@ -88,7 +88,7 @@ public class CharacterDAO {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			while (rs.next()) {
-				String salary = rs.getString(1);
+				Integer salary = rs.getInt(1);
 
 //				cdto = new CharacterDTO(Name);
 

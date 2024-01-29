@@ -34,4 +34,8 @@ public class DeveloperController {
 		return cdao.cDelete(name);
 	}
 
+	
+	public ArrayList<Integer> salaryList(){
+		return cdao.salaryList();
+	}
 }
