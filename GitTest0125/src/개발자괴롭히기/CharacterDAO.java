@@ -77,6 +77,24 @@ public class CharacterDAO {
 		return list;
 
 	}
+	
+	public int delete(String character) {
+		
+		int cnt = 0;
+		
+		try {
+			connection();
+			String sql = "DELETE FROM MEMBER WHERE CHARACTER = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, character);
+			cnt = psmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;	
+	}
 
 	private void close() {
 
