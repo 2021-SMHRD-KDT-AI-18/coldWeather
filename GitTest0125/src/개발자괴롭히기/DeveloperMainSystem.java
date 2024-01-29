@@ -30,7 +30,7 @@ public class DeveloperMainSystem {
 		CharacterDTO enemy = null;
 
 		while (true) {
-			// CRUD (create / read / update / delete)
+			// CRUD (create / read / update / delete)	
 			System.out.print("\r\n"
 					+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣶⡄⠀⠀⠀⣠⣤⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
 					+ "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣶⣤⡀⠀⠀⠀⠀⠈⢻⣿⡆⠀⢸⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
@@ -145,6 +145,7 @@ public class DeveloperMainSystem {
 				}
 
 			} else if (menu == 2) {
+				
 				System.out.println("=====로그인=====");
 				System.out.print("ID 입력 : ");
 				String id = sc.next();
