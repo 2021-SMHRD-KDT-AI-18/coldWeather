@@ -13,6 +13,7 @@ public class CharacterDTO {
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
 	// 필드
+	private String id;
 	private String name;
 	private int hp;
 	private int intell;

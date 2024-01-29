@@ -149,6 +149,8 @@ public class CharacterDAO {
 
 	}
 
+	
+
 	private void connection() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
