@@ -54,9 +54,7 @@ public class CharacterDAO {
 		CharacterDTO cdto = null;
 		try {
 			connection();
-			String sql = "SELECT NICKNAME \r\n"
-					+ "  FROM character \r\n"
-					+ "  ORDER BY salary DESC";
+			String sql = "SELECT NICKNAME \r\n" + "  FROM character \r\n" + "  ORDER BY salary DESC";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			while (rs.next()) {
@@ -66,7 +64,6 @@ public class CharacterDAO {
 
 				list.add(Name);
 
-				
 			}
 		}
 
@@ -80,10 +77,35 @@ public class CharacterDAO {
 		return list;
 
 	}
-	
-	
-	
-	
+
+	public ArrayList<String> salaryList() {
+
+		ArrayList<String> salaryList = new ArrayList<String>();
+		CharacterDTO cdto = null;
+		try {
+			connection();
+			String sql = "SELECT salary \r\n" + "  FROM character \r\n" + "  ORDER BY salary DESC";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				String salary = rs.getString(1);
+
+//				cdto = new CharacterDTO(Name);
+
+				salaryList.add(salary);
+
+			}
+		}
+
+		catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return salaryList;
+	}
 
 	// 캐릭터 삭제기능
 	public int cDelete(String name) {
