@@ -48,21 +48,23 @@ public class CharacterDAO {
 	}
 
 //	캐릭터 랭킹 기능
-	public ArrayList<CharacterDTO> CharacterList() {
+	public ArrayList<String> CharacterList() {
 
-		ArrayList<CharacterDTO> list = new ArrayList<CharacterDTO>();
-
+		ArrayList<String> list = new ArrayList<String>();
+		CharacterDTO cdto = null;
 		try {
 			connection();
-			String sql = " select * from character order by salary";
+			String sql = "SELECT NICKNAME \r\n"
+					+ "  FROM character \r\n"
+					+ "  ORDER BY salary DESC";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				String Name = rs.getString(1);
 
-				CharacterDTO cdto = new CharacterDTO(Name);
+//				cdto = new CharacterDTO(Name);
 
-				list.add(cdto);
+				list.add(Name);
 
 			}
 		}

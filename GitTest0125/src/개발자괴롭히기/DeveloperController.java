@@ -15,7 +15,7 @@ public class DeveloperController {
 		return dao.login(id, pw);
 	}
 
-	public ArrayList<CharacterDTO> CharacterList() {
+	public ArrayList<String> CharacterList() {
 		return cdao.CharacterList();
 
 	}
