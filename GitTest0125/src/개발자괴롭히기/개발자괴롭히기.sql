@@ -1,3 +1,3 @@
-SELECT * FROM 회원;
+SELECT * FROM member;
 SELECT name FROM 회원;
 select * from character;

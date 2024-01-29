@@ -105,6 +105,7 @@ public class DeveloperMainSystem {
 
 			System.out.println("===================== 1.회원등록====================");
 			System.out.println("===================== 2.로그인=====================");
+			System.out.println("===================== 3.회원탈퇴=====================");
 			System.out.print(" >>> ");
 			int menu = sc.nextInt();
 
@@ -141,6 +142,20 @@ public class DeveloperMainSystem {
 					break;
 				} else {
 					System.out.println("정확한 정보를 입력해주세요.");
+
+				}
+			}
+			else if(menu==3) {
+				
+				System.out.println("====회원탈퇴====");
+				System.out.print("삭제할 아이디를 입력해주세요 : ");
+				String id=sc.next();
+				int cnt = controller.delete(id);
+			
+				if (cnt > 0) {
+					System.out.println("탈퇴성공");
+				} else {
+					System.out.println("탈퇴실패");
 
 				}
 			}
@@ -202,51 +217,7 @@ public class DeveloperMainSystem {
 			}
 
 		}
-		
- 		//배틀 시스템
-		
-		
-		
-		System.out.println("대결을 시작합니다");
-		
-		int stage = 1;
-		while(true) {
-		if(stage == 1) {
-			enemy e1 = new enemy("pbkMK1", 50, 50, 50, 50, 50); 
-		}else if (stage==2) {
-			enemy e1 = new enemy("pbkMK2", 60, 60, 60, 60, 60);
-		}else if (stage==3) {
-			enemy e1 = new enemy("pbkMK3", 70, 70, 70, 70, 70);
-		}
-		
-		System.out.println("Round "+stage+" 그 ~ 상대는 : " + e1.name); // 상대이름 출력
-	
-		while(true) {
-			System.out.println("행동을 선택하시오 1.공격 2.회복 3.회피");
-			int menu = sc.nextInt();
-			if(menu == 1) { // 공격
-				controller.battle.attack();   //플레이어 공격
-			}
-			else if(menu == 2) { // 회복
-				controller.battle.heal();
-			}
-			else if(menu == 3) { // 회피
-				controller.battle.dodge();
-			}
-			if (e1.hp =< 0) { // 적체력 0이하 일떄
-				break; 
-				stage++; // 다음스테이지
-			}else if ( CharacterDTO.hp =<0) { //플레이어 체력 0이하 일때
-				delet.name; // 캐삭
-				break;
-				
-			}
-		}
-
-		// 승리시
-
-		// 실패시
-
-		// 3단계 클리어시
 	}
 }
+		
+ 		//배틀 시스템
