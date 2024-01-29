@@ -13,6 +13,8 @@ import oracle.net.aso.s;
 
 public class DeveloperMainSystem {
 
+	private static final Scanner Scanner = null;
+
 	public static void main(String[] args) {
 
 		// MVC Pattern (Design Pattern 일종 )
@@ -28,6 +30,7 @@ public class DeveloperMainSystem {
 		DeveloperDTO dto = null;
 		CharacterDTO player = null;
 		CharacterDTO enemy = null;
+		String id = "0";
 
 		while (true) {
 			// CRUD (create / read / update / delete)	
@@ -115,7 +118,7 @@ public class DeveloperMainSystem {
 						+ "⠀⠀⠀⠀⠀⠀⠀⢿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⡿⠀⠀⠀⠀⠀⠀⠀\r\n" + "");
 				System.out.println("======회원등록=====");
 				System.out.print("ID입력 : ");
-				String id = sc.next();
+				id = sc.next();
 				System.out.print("PW입력 : ");
 				String pw = sc.next();
 
@@ -148,7 +151,7 @@ public class DeveloperMainSystem {
 				
 				System.out.println("=====로그인=====");
 				System.out.print("ID 입력 : ");
-				String id = sc.next();
+				id = sc.next();
 				System.out.print("PW 입력 : ");
 				String pw = sc.next();
 
@@ -168,7 +171,7 @@ public class DeveloperMainSystem {
 
 				System.out.println("====회원탈퇴====");
 				System.out.print("삭제할 아이디를 입력해주세요 : ");
-				String id = sc.next();
+				id = sc.next();
 				int cnt = controller.delete(id);
 
 				if (cnt > 0) {
@@ -196,10 +199,14 @@ public class DeveloperMainSystem {
 				System.out.println("====랭킹 조회====");
 
 				ArrayList<String> list = controller.CharacterList();// 나중에 characterDTO로 변경
+				ArrayList<Integer> salarylist = controller.salaryList();
 
-				System.out.println("닉네임\t 연봉");
+				System.out.println("닉네임\t연봉");
 				for (int i = 0; i < list.size(); i++) {
 					System.out.print(list.get(i) + "\t");
+					System.out.print(salarylist.get(i) * 100 + "만원\t");
+					System.out.println();
+
 				}
 				System.out.println();
 				System.out.println();
@@ -220,6 +227,25 @@ public class DeveloperMainSystem {
 			}
 
 		}
+
+		System.out.print("난이도를 선택하세요 (1: 쉬움, 2: 중간, 3: 어려움): ");
+		int difficulty = sc.nextInt();
+		int statTotal = 0;
+		switch (difficulty) {
+		case 1:
+			statTotal = 120;
+			break;
+		case 2:
+			statTotal = 100;
+			break;
+		case 3:
+			statTotal = 80;
+			break;
+		case 9:
+			statTotal = 5000;
+			break;
+		}
+
 		// 캐릭터 생성 및 능력치 분배
 
 		System.out.println("캐릭터를 생성합니다.");
@@ -227,47 +253,51 @@ public class DeveloperMainSystem {
 		String name = sc.next();
 		System.out.println("능력치를 분배해주세요");
 		System.out.println("1.체력 2.지능 3.신앙력 4.마력 5.정신력");
-		System.out.print("체력 : ");
-		int health = sc.nextInt();
-		System.out.print("지능 : ");
-		int intelligence = sc.nextInt();
-		System.out.print("신앙력 : ");
-		int faithPower = sc.nextInt();
-		System.out.print("마력 : ");
-		int magicPower = sc.nextInt();
-		System.out.print("정신력 : ");
-		int mentality = sc.nextInt();
+		System.out.println("====체력 : 코딩을 위한 기초 능력====");
+		int health = 50 + CharacterDTO.getStatInput(sc, "체력", statTotal);
+		statTotal -= (health - 50);
+		System.out.println("====지능 : 코딩 공격력====");
+		int intelligence = CharacterDTO.getStatInput(sc, "지능", statTotal);
+		statTotal -= intelligence;
+		System.out.println("====신앙력 : 코딩 공격을 방어하는 능력====");
+		int faithPower = CharacterDTO.getStatInput(sc, "신앙력", statTotal);
+		statTotal -= faithPower;
+		System.out.println("====마력 : 특수 공격력====");
+		int magicPower = CharacterDTO.getStatInput(sc, "마력", statTotal);
+		statTotal -= magicPower;
+		System.out.println("====신앙력 : 치명타 확률 + 데미지====");
+		int mentality = CharacterDTO.getStatInput(sc, "정신력", statTotal);
+		statTotal -= mentality;
 		int salary = 0;
-		
+
 		player = new CharacterDTO(name, health, intelligence, faithPower, magicPower, mentality, salary);
-		// CharacterDTO 만들어지면 컨트롤러에 입력해서 받아오면 됨
 
 		// 배틀 시스템
 
 		// 적의 스텟 설정
 		for (int level = 1; level <= 3 && player.getHp() > 0; level++) {
-			System.out.println("\nLevel " + level + " 적이 등장했습니다."); // 상대 스텟 분배
+			System.out.println("\nLevel " + level + " 적이 코딩 승부를 걸어왔다"); // 상대 스텟 분배
 			if (level == 1) {
-				int hp = 300;
-				int intell = 40;
-				int fp = 40;
-				int mp = 40;
-				int ment = 40;
-				enemy = new CharacterDTO("pbk mk1", level, hp, intell, fp, mp, ment);
+				int hp = 150;
+				int intell = 10;
+				int fp = 15;
+				int mp = 15;
+				int ment = 15;
+				enemy = new CharacterDTO("pbk mk1", hp, intell, fp, mp, ment, 0);
 			} else if (level == 2) {
-				int hp = 450;
-				int intell = 55;
+				int hp = 200;
+				int intell = 40;
 				int fp = 20;
-				int mp = 55;
+				int mp = 200;
 				int ment = 30;
-				enemy = new CharacterDTO("pbk mk2", level, hp, intell, fp, mp, ment);
+				enemy = new CharacterDTO("pbk mk2", hp, intell, fp, mp, ment, 0);
 			} else if (level == 3) {
-				int hp = 500;
-				int intell = 60;
+				int hp = 250;
+				int intell = 20;
 				int fp = 20;
-				int mp = 60;
-				int ment = 45;
-				enemy = new CharacterDTO("pbk mk3", level, hp, intell, fp, mp, ment);
+				int mp = 30;
+				int ment = 20;
+				enemy = new CharacterDTO("pbk mk3", hp, intell, fp, mp, ment, 0);
 			}
 			// 적의 공격행동 설정
 			while (player.getHp() > 0 && enemy.getHp() > 0) {
@@ -278,60 +308,67 @@ public class DeveloperMainSystem {
 				if (enemyAttackType == 1) {
 					enemyAttack = enemy.normalAttack();
 					if (enemyAttack > 0) {
-						System.out.println(enemy.getName() + "가 일반 공격을 할 것 같습니다. 예상 수치: " + Math.abs(enemyAttack));
+						System.out
+								.println(enemy.getName() + "(이)가 코딩테스트 공격을 할 것 같습니다. 예상 수치: " + Math.abs(enemyAttack));
 					} else {
 						System.out.println("상대 공격을 피할 수 있을것 같습니다.");
 					}
 				} else if (enemyAttackType == 2) {
 					enemyAttack = enemy.specialAttack();
 					if (enemyAttack > 0) {
-						System.out.println(enemy.getName() + "가 특수 공격을 할 것 같습니다. 예상 수치: " + Math.abs(enemyAttack));
+						System.out.println(
+								enemy.getName() + "(이)가 변수 이름 바꾸기 공격을 할 것 같습니다. 예상 수치: " + Math.abs(enemyAttack));
 					} else {
 						System.out.println("상대 공격을 피할 수 있을것 같습니다.");
 					}
 
 				} else if (enemyAttackType == 3) {
 					enemy.setHp(enemy.getHp() + enemy.defend());
-					System.out
-							.println(enemy.getName() + "가 방어를 시전하여 " + enemy.defend() + " 만큼 충격을 상쇄하고 남은 수치만큼 회복 합니다.");
+					System.out.println(enemy.getName() + "(이)가 챗GPT를 사용하여 " + enemy.defend() + " 만큼 코드를 복구합니다.");
 				}
 				// 플레이어의 공격 선택
-				System.out.print("\n1. 일반 공격 2. 특수 공격 3. 방어 선택: ");
+				System.out.print("\n1. 맥북 사기 2. 이직하기 3. 방어 선택: ");
 				int actionChoice = sc.nextInt();
 				if (actionChoice == 1) {
 					playerAttack = player.normalAttack();
 					if (playerAttack > 0) {
-						System.out.println(player.getName() + "가 일반 공격을 하여 " + playerAttack + "데미지를 입혔습니다.");
+						System.out.println(player.getName() + "(이)가 할부로 맥북을 구매하여 " + playerAttack + "데미지를 입혔습니다.");
 					} else {
 						System.out.println("공격이 빗나갔습니다.");
 					}
 				} else if (actionChoice == 2) {
 					playerAttack = player.specialAttack();
 					if (playerAttack > 0) {
-						System.out.println(player.getName() + "가 특수 공격을 하여 " + playerAttack + "데미지를 입혔습니다.");
+						System.out.println(player.getName() + "(이)가 이직을 성공하여 " + playerAttack + "데미지를 입혔습니다.");
 					} else {
 						System.out.println("공격이 빗나갔습니다.");
 					}
 				} else if (actionChoice == 3) {
 					enemy.setHp(enemy.getHp() + player.defend());
 					System.out.println(
-							player.getName() + "가 방어를 시전하여 " + player.defend() + " 만큼 충격을 상쇄하고 남은 수치만큼 회복 합니다.");
+							player.getName() + "(이)가 디도스를 시전하여 " + player.defend() + " 만큼 충격을 상쇄하고 남은 수치만큼 행복해합니다.");
 				}
+
 				// 플레이어의 공격
 				enemy.setHp(enemy.getHp() - playerAttack);
+
+				System.out.print(enemy.getName() + "의 체력: " + enemy.getHp());
+
 				if (enemy.getHp() <= 0) {
-					System.out.println("\n" + enemy.getName() + "가 패배하였습니다. " + enemy.getHp());
+					System.out.println("\n" + enemy.getName() + "(이)가 패배하였습니다. ");
+
 					break;
 				}
 				// 적의 공격
 				player.setHp(player.getHp() - enemyAttack);
+				System.out.print("\t" + player.getName() + "의 체력: " + player.getHp() + "\n");
 				if (player.getHp() <= 0) {
-					System.out.println("\n" + player.getName() + "가 패배하였습니다. " + player.getHp());
+					System.out.println("\n" + player.getName() + "(이)가 패배하였습니다. ");
 					break;
 				}
+
 				// 남은 체력 출력
-				System.out.println("\n" + player.getName() + "의 체력: " + player.getHp() + ", " + enemy.getName()
-						+ "의 체력: " + enemy.getHp());
+
 			}
 			// 승리
 
@@ -340,7 +377,8 @@ public class DeveloperMainSystem {
 			System.out.println("\n축하합니다! 모든 적을 이기고 게임에서 승리하였습니다!");
 			System.out.println("랭킹에 등록합니다");
 			player.setSalary(player.getHp());
-			System.err.println("당신의 연봉은" + player.getSalary() * 100 + "만원 입니다");
+			System.err.println("당신의 연봉은 " + player.getSalary() * 100 + "만원 입니다");
+
 			int cnt = controller.inputStats(player);
 			if (cnt > 0) {
 				System.out.println("랭킹 등록이 완료되었습니다");
