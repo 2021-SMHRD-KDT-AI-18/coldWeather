@@ -140,7 +140,7 @@ public class DeveloperMainSystem {
             ArrayList<String> list = controller.CharacterList();// 나중에 characterDTO로 변경
             ArrayList<Integer> salarylist = controller.salaryList();
 
-            System.out.println("닉네임\t연봉");
+            System.out.println("순위\t닉네임\t연봉");
             for (int j = 1; j <= list.size(); j++) {
                for (int i = 0; i < list.size(); i++, j++) {
                   System.out.print(j + "위\t");
@@ -244,7 +244,7 @@ public class DeveloperMainSystem {
       System.out.println("======마력 : 특수 공격력======");
       int magicPower = CharacterDTO.getStatInput(sc, "마력", statTotal);
       statTotal -= magicPower;
-      System.out.println("======신앙력 : 치명타 확률 + 데미지======");
+      System.out.println("======정신력 : 치명타 확률 + 데미지======");
       int mentality = CharacterDTO.getStatInput(sc, "정신력", statTotal);
       statTotal -= mentality;
       int salary = 0;
