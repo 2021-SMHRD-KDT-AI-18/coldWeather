@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-
+import javazoom.jl.player.MP3Player;
 
 public class DeveloperMainSystem {
 
@@ -32,8 +32,11 @@ public class DeveloperMainSystem {
       CharacterDTO enemy = null;
       String id = "0";
 
+      MP3Player mp3 = new MP3Player();
+      mp3.play("C:\\\\Users\\\\smhrd\\\\Downloads\\\\BGM\\\\포캣몬스터 레드그린 무지개 게임 코너 BGM.mp3");
+
       while (true) {
-         // CRUD (create / read / update / delete)   
+         // CRUD (create / read / update / delete)
          System.out.print("\r\n"
                + "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣶⡄⠀⠀⠀⣠⣤⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
                + "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣶⣤⡀⠀⠀⠀⠀⠈⢻⣿⡆⠀⢸⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
@@ -201,7 +204,7 @@ public class DeveloperMainSystem {
                      + "⠀⠀⠀⠀⠀⠀⠀⠉⠉⠁⠀⠀⠀⠀⠀⠀⣹⡯⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀ ⠀⠀⠀⠀⠁⠀⠀⢸⣯⠀⠀⠀⠀⣤⣤⣤⣤⣤⣤⣤⣬⣿⣤⣤⣤⣤⣤⣤⣤⡤⠀⠀  ⠀⠀⠀⠀⠀⠀⠀⢨⣷⠀⠠⣿⡂⠀⠀⠀⣤⣤⣤⣤⣾⣷⣤⣤⣤⣤⣤⣿⣥⣤⣤⣤⡤⠀⠀⠀⠀\r\n"
                      + "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢼⣗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀⠀⠀⢸⡿⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠈⠉⠉⠉⠉⠉⠉⠁⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣗⠀⠐⣿⡂⠀⠀⠀⠈⠉⠉⠈⠁⠉⠈⠉⠉⠉⠈⠁⠉⠉⠉⠁⠁⠀⠀⠀⠀\r\n"
                      + "");
-               System.out.println("======"+info.getId() + "님 환영합니다.======");
+               System.out.println("======" + info.getId() + "님 환영합니다.======");
                break;
             } else {
                System.out.println("\r\n"
@@ -297,6 +300,8 @@ public class DeveloperMainSystem {
                + "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢽⣿⣿⠨⠀⠀⠀⠀⠀⠀⠀⠀⠈⣻⣿⡿⠡⠀⠀⠀⠀⠀⠀⠀⠀⠌⣿⣿⣟⠄⠀⠀⠀⠀⠀⠪⢻⢿⣿⣿⣾⣿⣷⣿⡟⠏⠊⣽⣿⣿⠄⠀⠀⠀⠀⠀⢸⣿⣿⡣⠀⠀⠀⠀⠀⠀⢱⣿⣿⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⢮⣿⣿⢌⠀⠀⠀⠀⠀⠀\r\n"
                + "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠙⠙⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠙⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠚⠋⠓⠀⠀⠀⠀⠀⠀⠀⠀⠁⠉⠋⠛⠙⠙⠐⠈⠀⠐⠘⠙⠙⠀⠀⠀⠀ ⠀⠀⠈⠋⠋⠃⠀⠀⠀⠀⠀⠀⠈⠋⠋⠃⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠈⠘⠙⠙⠁⠀⠀⠀⠀⠀⠀\r\n"
                + "");
+         mp3.stop();
+         mp3.play("C:\\\\Users\\\\smhrd\\\\Downloads\\\\BGM\\\\포켓몬스터 레드그린 3번도로 BGM.mp3");
          System.out.println("======1.게임시작======");
          System.out.println("======2.랭킹확인======");
          System.out.println("======3.캐릭터 삭제======");
@@ -349,20 +354,13 @@ public class DeveloperMainSystem {
          }
          // 3 . 캐릭터 삭제
          else if (menu == 3) {
-            System.out.println("＼　　ヽ　　　　i　　|　　　　 /　　　/　\r\n"
-                  + "　　　＼　\r\n"
-                  + "!\r\n"
-                  + "　　　　　　　　　　　　　　;' ':;,,　　　　 ,;'':;,\r\n"
-                  + "　　　　　　　　　　　　　;'　　 ':;,.,.,.,.,.,,,;'　　';,\r\n"
-                  + "　　ー　　　　　　　　 ,:'　　　　　　　　 　::::::::､\r\n"
-                  + "　_＿　　　　　　　　,:'  ／ 　 　　　　＼ ::::::::',\r\n"
-                  + "　　　　　二　　　　:'　   ●　　　　　 ●　 　::::::::i.\r\n"
-                  + "　　￣　　　　　　　i　 '''　(__人_)　　''''::::::::::i\r\n"
-                  + "　　　　-‐　　　　　 :　 　　　　　　　　　 　::::::::i\r\n"
-                  + "　　　　　　　　　　　`:,､ 　　　　　 　 　 :::::::::: /\r\n"
+            System.out.println("＼　　ヽ　　　　i　　|　　　　 /　　　/　\r\n" + "　　　＼　\r\n" + "!\r\n"
+                  + "　　　　　　　　　　　　　　;' ':;,,　　　　 ,;'':;,\r\n" + "　　　　　　　　　　　　　;'　　 ':;,.,.,.,.,.,,,;'　　';,\r\n"
+                  + "　　ー　　　　　　　　 ,:'　　　　　　　　 　::::::::､\r\n" + "　_＿　　　　　　　　,:'  ／ 　 　　　　＼ ::::::::',\r\n"
+                  + "　　　　　二　　　　:'　   ●　　　　　 ●　 　::::::::i.\r\n" + "　　￣　　　　　　　i　 '''　(__人_)　　''''::::::::::i\r\n"
+                  + "　　　　-‐　　　　　 :　 　　　　　　　　　 　::::::::i\r\n" + "　　　　　　　　　　　`:,､ 　　　　　 　 　 :::::::::: /\r\n"
                   + "　　　　／　　　　　　 ,:'　　　　　　　 : ::::::::::::｀:､\r\n"
-                  + "　　　　　　　　　　　 ,:'　　　　　　　　 : : ::::::::::｀:､\r\n"
-                  + "");
+                  + "　　　　　　　　　　　 ,:'　　　　　　　　 : : ::::::::::｀:､\r\n" + "");
             System.out.println("\r\n"
                   + "⠀⠀⠀⢀⢀⢀⢀⢀⢀⢀⠀⠀⢐⣶⠂⠀⢸⣿⠀⠀⠀⠀⠀⢀⣴⣤⣦⣴⣤⣦⣴⣤⠄⠀⠀⠐⣿⡃⠀⠀ ⠀⠀⠀⣀⣄⣄⣄⣄⣄⣄⣄⣄⡀⠀ ⠀⢸⣿⠀⠀⠀⠀⠀⠀⡀⡀⡀⡀⡀⡀⡀⡀⠀⠀⠀⢼⣟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
                   + "⠀⠀⠀⠸⠛⠟⠻⠛⢟⣿⠃⠀⢐⣿⠁⠀⢸⣿⠀⠀⠀⠀⠀⠀⠈⠈⠈⠈⠈⠈⢘⣿⠄⠀⠀⠐⣿⡅⠀⠀ ⠀⠀⠀⢼⡿⠉⠋⠙⠉⠋⠙⠉⠂⠀⠀ ⢸⣿⠀⠀⠀⠀⠀⠘⠻⠛⠟⠻⠛⠟⢻⣿⠁⠀⠀⣸⡷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
@@ -461,6 +459,8 @@ public class DeveloperMainSystem {
             + "⠀⠀⠀⠀⠀⢱⣵⣤⡠⡀⠀⠀⠀⢀⢠⣰⣾⣿⠣⠁⠀⠀⠀⠀⠀⠀⠀⠐⣿⣿⠅⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⡳⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠨⣻⣿⡥⠀⠀⠀⣿⣿⡅⠀⠀⠀⠀⠀⠀⠀⠀⢟⣿⣷⡠⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⡯⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
             + "⠀⠀⠀⠀⠀⠈⠟⠿⡿⣿⣿⣿⣿⣿⠿⠿⠋⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠨⣿⣿⠌⠀⠀⠀⠀⠀⠀⠀⣲⣿⡿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⡄⠀⠀⣿⣿⡊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣯⡆⠀⠀⠀⠀⠀⠀⠀⡸⣿⡯⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
             + "");
+      mp3.stop();
+      mp3.play("C:\\\\Users\\\\smhrd\\\\Downloads\\\\BGM\\\\포켓몬스터 레드그린 오박사연구소 BGM.mp3");
       System.out.print("======난이도를 선택하세요 (1: 쉬움, 2: 중간, 3: 어려움): ");
       int difficulty = sc.nextInt();
       int statTotal = 0;
@@ -532,11 +532,13 @@ public class DeveloperMainSystem {
       int salary = 0;
 
       player = new CharacterDTO(name, health, intelligence, faithPower, magicPower, mentality, salary);
+      mp3.stop();
 
       // 배틀 시스템
 
       // 적의 스텟 설정
       for (int level = 1; level <= 3 && player.getHp() > 0; level++) {
+
          System.out.println("\n"
                + "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀ ⠀⠀ ⠀⠀⠀⡀⣄⣄⡀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
                + "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀ ⠀⢀⡰⡙⡎⠊⠊⠙⠪⠣⣢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
@@ -574,6 +576,7 @@ public class DeveloperMainSystem {
                + "");
          System.out.println("\nLevel " + level + " 적이 코딩 승부를 걸어왔다"); // 상대 스텟 분배
          if (level == 1) {
+            mp3.play("C:\\\\Users\\\\smhrd\\\\Downloads\\\\BGM\\\\포켓몬스터 레드그린 야생포켓몬 배틀 BGM.mp3");
             int hp = 150;
             int intell = 10;
             int fp = 15;
@@ -581,6 +584,8 @@ public class DeveloperMainSystem {
             int ment = 15;
             enemy = new CharacterDTO("pbk mk1", hp, intell, fp, mp, ment, 0);
          } else if (level == 2) {
+            mp3.stop();
+            mp3.play("C:\\\\Users\\\\smhrd\\\\Downloads\\\\BGM\\\\포켓몬스터 레드그린 챔피언 배틀 BGM.mp3");
             int hp = 200;
             int intell = 40;
             int fp = 20;
@@ -588,6 +593,8 @@ public class DeveloperMainSystem {
             int ment = 30;
             enemy = new CharacterDTO("pbk mk2", hp, intell, fp, mp, ment, 0);
          } else if (level == 3) {
+            mp3.stop();
+            mp3.play("C:\\\\Users\\\\smhrd\\\\Downloads\\\\BGM\\\\포켓몬스터 레드그린 체육관 관장 배틀 BGM.mp3");
             int hp = 250;
             int intell = 20;
             int fp = 20;
@@ -660,6 +667,8 @@ public class DeveloperMainSystem {
             System.out.print("\t" + player.getName() + "의 체력: " + player.getHp() + "\n");
             if (player.getHp() <= 0) {
                System.out.println("\n" + player.getName() + "(이)가 패배하였습니다. ");
+               mp3.stop();
+               mp3.play("C:\\\\Users\\\\smhrd\\\\Downloads\\\\BGM\\\\포켓몬스터 레드그린 체육관 관장 승리 BGM.mp3");
                break;
             }
 
@@ -670,6 +679,8 @@ public class DeveloperMainSystem {
 
       }
       if (player.getHp() > 0) {
+         mp3.stop();
+         mp3.play("C:\\\\Users\\\\smhrd\\\\Downloads\\\\BGM\\\\포켓몬스터 레드그린 야생포켓몬 승리 BGM.mp3");
          System.out.println("\n축하합니다! 모든 적을 이기고 게임에서 승리하였습니다!");
          System.out.println("랭킹에 등록합니다");
          player.setSalary(player.getHp());
@@ -682,6 +693,7 @@ public class DeveloperMainSystem {
             System.out.println("랭킹 등록에 실패했습니다");
          }
       }
-   }
+
+}
 }
 // 배틀 시스템
