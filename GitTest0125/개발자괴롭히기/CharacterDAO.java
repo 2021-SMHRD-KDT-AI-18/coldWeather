@@ -54,7 +54,7 @@ public class CharacterDAO {
 		CharacterDTO cdto = null;
 		try {
 			connection();
-			String sql = "SELECT NICKNAME \r\n" + "  FROM character \r\n" + "  ORDER BY salary DESC";
+			String sql = "SELECT NAME_TB \r\n" + "  FROM character \r\n" + "  ORDER BY SALARY_TB DESC";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			while (rs.next()) {
@@ -84,7 +84,7 @@ public class CharacterDAO {
 		CharacterDTO cdto = null;
 		try {
 			connection();
-			String sql = "SELECT salary \r\n" + "  FROM character \r\n" + "  ORDER BY salary DESC";
+			String sql = "SELECT SALARY_TB \r\n" + "  FROM character \r\n" + "  ORDER BY SALARY_TB DESC";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			while (rs.next()) {
@@ -115,7 +115,7 @@ public class CharacterDAO {
 		try {
 			connection();
 
-			String sql = "DELETE FROM CHARACTER WHERE NICKNAME = ?";
+			String sql = "DELETE FROM CHARACTER WHERE NAME_TB = ?";
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, name);
