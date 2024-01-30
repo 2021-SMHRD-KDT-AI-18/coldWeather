@@ -39,7 +39,7 @@ public class DeveloperDAO {
 			// 3.SQL문장 실행
 			// -PreparedStatement
 
-			String sql = "INSERT INTO member VALUES(?,?)"; // 바인드 변수
+			String sql = "INSERT INTO member_TB VALUES(?,?)"; // 바인드 변수
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
@@ -72,7 +72,7 @@ public class DeveloperDAO {
 		try {
 			connection();
 
-			String sql = " select * from member where id=? and pw=? ";
+			String sql = " select * from member_TB where id=? and pw=? ";
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, ID);
@@ -107,7 +107,7 @@ public class DeveloperDAO {
 
 		try {
 			connection();
-			String sql = " select * from member order by id";
+			String sql = " select * from member_TB order by id";
 			psmt = conn.prepareStatement(sql);
 
 			rs = psmt.executeQuery();
@@ -144,7 +144,7 @@ public class DeveloperDAO {
 
 		try {
 
-			String sql = " delete from member where id = ? ";
+			String sql = " delete from member_TB where id = ? ";
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);

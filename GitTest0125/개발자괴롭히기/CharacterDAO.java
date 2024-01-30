@@ -28,7 +28,7 @@ public class CharacterDAO {
 
 		connection();
 		try {
-			String sql = "INSERT INTO character VALUES (?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO character_TB VALUES (?,?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, name);
 			psmt.setInt(2, hp);
@@ -54,7 +54,7 @@ public class CharacterDAO {
 		CharacterDTO cdto = null;
 		try {
 			connection();
-			String sql = "SELECT NAME_TB \r\n" + "  FROM character \r\n" + "  ORDER BY SALARY_TB DESC";
+			String sql = "SELECT NAME \r\n" + "  FROM character_TB \r\n" + "  ORDER BY SALARY DESC";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			while (rs.next()) {
@@ -84,7 +84,7 @@ public class CharacterDAO {
 		CharacterDTO cdto = null;
 		try {
 			connection();
-			String sql = "SELECT SALARY_TB \r\n" + "  FROM character \r\n" + "  ORDER BY SALARY_TB DESC";
+			String sql = "SELECT SALARY \r\n" + "  FROM character_TB \r\n" + "  ORDER BY SALARY DESC";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			while (rs.next()) {
@@ -115,7 +115,7 @@ public class CharacterDAO {
 		try {
 			connection();
 
-			String sql = "DELETE FROM CHARACTER WHERE NAME_TB = ?";
+			String sql = "DELETE FROM CHARACTER_TB WHERE NAME = ?";
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, name);
